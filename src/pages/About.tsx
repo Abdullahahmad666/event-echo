@@ -1,0 +1,166 @@
+import { Layout } from "@/components/layout/Layout";
+import { AnimatedSection } from "@/components/ui/AnimatedSection";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+
+const teamMembers = [
+  {
+    name: "Emily Parker",
+    title: "Founder & Creative Director",
+    bio: "With over 15 years in event design, Emily brings a refined aesthetic and passionate attention to every celebration she touches.",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1974&auto=format&fit=crop",
+  },
+  {
+    name: "James Chen",
+    title: "Lead Event Coordinator",
+    bio: "James ensures every event runs seamlessly, managing logistics with grace and precision that our clients have come to trust.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop",
+  },
+  {
+    name: "Sofia Martinez",
+    title: "Design Specialist",
+    bio: "Sofia's eye for color, texture, and detail transforms spaces into immersive experiences that captivate and inspire.",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop",
+  },
+];
+
+const About = () => {
+  return (
+    <Layout>
+      {/* Hero Banner */}
+      <section className="relative h-[60vh] min-h-[500px] flex items-end">
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop"
+            alt="Elegant event design"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-foreground/20" />
+        </div>
+        <div className="relative z-10 container mx-auto px-6 lg:px-12 pb-16">
+          <p className="animate-fade-in text-primary-foreground/80 font-sans text-xs tracking-[0.3em] uppercase mb-4">
+            About Us
+          </p>
+          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary-foreground animate-fade-in-delay-1">
+            Our Story
+          </h1>
+        </div>
+      </section>
+
+      {/* Story Section */}
+      <section className="py-24 lg:py-32 bg-background">
+        <div className="container mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            <AnimatedSection animation="slide-left">
+              <img
+                src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069&auto=format&fit=crop"
+                alt="Team at work"
+                className="w-full aspect-[4/5] object-cover"
+              />
+            </AnimatedSection>
+            <AnimatedSection animation="slide-right" delay={200}>
+              <p className="font-sans text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">
+                Est. 2010
+              </p>
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-8 leading-tight">
+                Crafting Celebrations with <em>Heart & Soul</em>
+              </h2>
+              <div className="space-y-6 text-muted-foreground leading-relaxed">
+                <p>
+                  Founded with a passion for creating meaningful moments, Elegant Events has grown from a small boutique studio to one of the most sought-after event planning companies in the region.
+                </p>
+                <p>
+                  We believe that every celebration is a reflection of the people it honors. Our approach is deeply personal—we take the time to understand your story, your style, and your vision before bringing it to life with meticulous attention to detail.
+                </p>
+                <p>
+                  From intimate gatherings to grand galas, we treat each event as a unique canvas, blending creativity with flawless execution to create experiences that resonate long after the last guest has departed.
+                </p>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* Values Section */}
+      <section className="py-24 lg:py-32 bg-secondary">
+        <div className="container mx-auto px-6 lg:px-12">
+          <AnimatedSection className="text-center mb-16">
+            <h2 className="font-serif text-3xl md:text-4xl text-foreground">
+              What Guides Us
+            </h2>
+          </AnimatedSection>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+            {[
+              { title: "Elegance", desc: "Timeless sophistication in every detail we design." },
+              { title: "Intention", desc: "Every choice serves a purpose in your celebration." },
+              { title: "Excellence", desc: "Uncompromising quality from concept to execution." },
+            ].map((value, index) => (
+              <AnimatedSection key={value.title} delay={index * 150} className="text-center">
+                <h3 className="font-serif text-2xl text-foreground mb-4">{value.title}</h3>
+                <p className="text-muted-foreground text-sm">{value.desc}</p>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="py-24 lg:py-32 bg-background">
+        <div className="container mx-auto px-6 lg:px-12">
+          <AnimatedSection className="text-center mb-16">
+            <p className="font-sans text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">
+              The Team
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground">
+              Meet the Creators
+            </h2>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+            {teamMembers.map((member, index) => (
+              <AnimatedSection key={member.name} delay={index * 150}>
+                <div className="group">
+                  <div className="relative aspect-[3/4] overflow-hidden mb-6">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+                  <h3 className="font-serif text-2xl text-foreground mb-1">{member.name}</h3>
+                  <p className="font-sans text-xs tracking-[0.15em] uppercase text-muted-foreground mb-4">
+                    {member.title}
+                  </p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{member.bio}</p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-24 lg:py-32 bg-card">
+        <div className="container mx-auto px-6 lg:px-12 text-center">
+          <AnimatedSection>
+            <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6">
+              Let's Create Together
+            </h2>
+            <p className="text-muted-foreground max-w-xl mx-auto mb-10">
+              We'd love to hear about your upcoming celebration and explore how we can bring your vision to life.
+            </p>
+            <Link
+              to="/inquire"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-foreground text-background font-sans text-xs tracking-[0.2em] uppercase hover:opacity-90 transition-all duration-300"
+            >
+              Get in Touch
+              <ArrowRight size={16} />
+            </Link>
+          </AnimatedSection>
+        </div>
+      </section>
+    </Layout>
+  );
+};
+
+export default About;
