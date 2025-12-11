@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Instagram, Mail, MapPin } from "lucide-react";
+import { Instagram, Mail, MapPin, Phone } from "lucide-react";
 
 export function Footer() {
   return (
@@ -9,7 +9,7 @@ export function Footer() {
           {/* Brand */}
           <div>
             <Link to="/" className="font-serif text-3xl tracking-wider text-foreground">
-              Elegant Events
+              Connecting the Dots
             </Link>
             <p className="mt-4 text-muted-foreground text-sm leading-relaxed max-w-xs">
               Creating unforgettable celebrations with meticulous attention to detail and timeless elegance.
@@ -46,15 +46,19 @@ export function Footer() {
             </h4>
             <div className="flex flex-col gap-4">
               <a
-                href="mailto:hello@elegantevents.com"
+                href="mailto:saminatanveer@hotmail.com"
                 className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors text-sm"
               >
                 <Mail size={16} />
-                hello@elegantevents.com
+                saminatanveer@hotmail.com
               </a>
               <div className="flex items-center gap-3 text-muted-foreground text-sm">
+                <Phone size={16} />
+                +19052999442
+              </div>
+              <div className="flex items-center gap-3 text-muted-foreground text-sm">
                 <MapPin size={16} />
-                Los Angeles, California
+                Milton Ontario, Canada
               </div>
               <a
                 href="https://instagram.com"
@@ -63,7 +67,7 @@ export function Footer() {
                 className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors text-sm"
               >
                 <Instagram size={16} />
-                @elegantevents
+                @connectingthedots
               </a>
             </div>
           </div>
@@ -71,7 +75,7 @@ export function Footer() {
 
         <div className="mt-16 pt-8 border-t border-border">
           <p className="text-center text-muted-foreground text-xs tracking-wide">
-            © {new Date().getFullYear()} Elegant Events. All rights reserved.
+            © {new Date().getFullYear()} Connecting the Dots. All rights reserved.
           </p>
         </div>
       </div>

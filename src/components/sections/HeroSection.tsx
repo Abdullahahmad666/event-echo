@@ -20,9 +20,9 @@ export function HeroSection() {
           Luxury Event Planning
         </p>
         <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-primary-foreground leading-[1.1] tracking-wide animate-fade-in-delay-1">
-          Creating Moments
+          Connecting Moments
           <br />
-          <em className="font-light">Worth Remembering</em>
+          <em className="font-light">Into Memories</em>
         </h1>
         <p className="mt-8 text-primary-foreground/80 font-sans text-base md:text-lg max-w-xl mx-auto animate-fade-in-delay-2">
           We craft bespoke celebrations that reflect your unique story with timeless elegance and impeccable detail.
