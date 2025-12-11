@@ -26,7 +26,6 @@ export function TestimonialsSection() {
   return (
     <section className="py-24 lg:py-32 bg-card">
       <div className="container mx-auto px-6 lg:px-12">
-
         {/* Heading */}
         <AnimatedSection className="text-center mb-16">
           <p className="font-sans text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">
@@ -39,12 +38,11 @@ export function TestimonialsSection() {
 
         {/* Continuous marquee animation */}
         <Animation duration={25}>
-          <div className="flex items-center gap-16 whitespace-nowrap">
-
+          <div className="flex items-center gap-24 whitespace-nowrap">
             {testimonials.map((testimonial, index) => (
-              <blockquote
+              <div
                 key={index}
-                className="inline-block w-[380px] text-center"
+                className="inline-block w-[350px] shrink-0 text-center whitespace-normal"
               >
                 <p className="font-serif text-xl md:text-2xl lg:text-3xl text-foreground leading-relaxed italic mb-8">
                   "{testimonial.quote}"
@@ -59,14 +57,14 @@ export function TestimonialsSection() {
                     </span>
                   </cite>
                 </footer>
-              </blockquote>
+              </div>
             ))}
 
-            {/* Duplicate for infinite loop */}
+            {/* Duplicate for infinite scrolling */}
             {testimonials.map((testimonial, index) => (
-              <blockquote
-                key={`duplicate-${index}`}
-                className="inline-block w-[380px] text-center"
+              <div
+                key={`dup-${index}`}
+                className="inline-block w-[350px] shrink-0 text-center whitespace-normal"
               >
                 <p className="font-serif text-xl md:text-2xl lg:text-3xl text-foreground leading-relaxed italic mb-8">
                   "{testimonial.quote}"
@@ -81,12 +79,10 @@ export function TestimonialsSection() {
                     </span>
                   </cite>
                 </footer>
-              </blockquote>
+              </div>
             ))}
-
           </div>
         </Animation>
-
       </div>
     </section>
   );
