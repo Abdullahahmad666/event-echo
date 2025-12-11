@@ -8,32 +8,32 @@ import image6 from "../assets/image6.jpeg";
 
 const galleryImages = [
   {
-    src: {image1},
+    src: image1,
     alt: "Elegant floral arrangement",
     className: "col-span-2 row-span-2",
   },
   {
-    src: {image2},
+    src: image2,
     alt: "Wedding table setting",
     className: "col-span-1",
   },
   {
-    src: {image3},
+    src: image3,
     alt: "Outdoor ceremony setup",
     className: "col-span-1",
   },
   {
-    src: {image4},
+    src: image4,
     alt: "Celebration decor",
     className: "col-span-1 row-span-2",
   },
   {
-    src: {image5},
+    src: image5,
     alt: "Intimate dinner party",
     className: "col-span-2",
   },
-    {
-    src: {image6},
+  {
+    src: image6,
     alt: "Intimate dinner party",
     className: "col-span-2",
   },
