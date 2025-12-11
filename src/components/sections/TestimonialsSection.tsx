@@ -8,9 +8,14 @@ const testimonials = [
     event: "Wedding at The Grand Estate",
   },
   {
-    quote: "Working with Elegant Events was an absolute dream. Their creativity and attention to detail exceeded all our expectations.",
+    quote: "Working with Connecting the Dots was an absolute dream. Their creativity and attention to detail exceeded all our expectations.",
     author: "The Anderson Family",
     event: "50th Anniversary Celebration",
+  },
+  {
+    quote: "Working with Connecting the Dots was an absolute Outstanding. Their creativity and attention to detail exceeded all our expectations.",
+    author: "The Talha Family",
+    event: "1st Anniversary Celebration",
   },
 ];
 
