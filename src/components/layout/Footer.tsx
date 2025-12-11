@@ -9,7 +9,7 @@ export function Footer() {
           {/* Brand */}
           <div>
             <Link to="/" className="font-serif text-3xl tracking-wider text-foreground">
-              Connecting the Dots
+              Connecting the Dots Decor
             </Link>
             <p className="mt-4 text-muted-foreground text-sm leading-relaxed max-w-xs">
               Creating unforgettable celebrations with meticulous attention to detail and timeless elegance.
