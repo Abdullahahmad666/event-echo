@@ -18,7 +18,7 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        <p className="animate-fade-in text-primary-foreground/90 font-sans text-xs tracking-[0.3em] uppercase mb-6 mt-1">
+        <p className="animate-fade-in text-primary-foreground/90 font-sans text-xs tracking-[0.3em] uppercase mb-6 mt-4">
           Luxury Event Planning
         </p>
         <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-primary-foreground leading-[1.1] tracking-wide animate-fade-in-delay-1">

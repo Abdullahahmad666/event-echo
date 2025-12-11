@@ -1,28 +1,39 @@
 import { AnimatedSection } from "../ui/AnimatedSection";
+import image1 from "../assets/image1.jpeg";
+import image2 from "../assets/image2.jpeg";
+import image3 from "../assets/image3.jpeg";
+import image4 from "../assets/image4.jpeg";
+import image5 from "../assets/image5.jpeg";
+import image6 from "../assets/image6.jpeg";
 
 const galleryImages = [
   {
-    src: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop",
+    src: {image1},
     alt: "Elegant floral arrangement",
     className: "col-span-2 row-span-2",
   },
   {
-    src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop",
+    src: {image2},
     alt: "Wedding table setting",
     className: "col-span-1",
   },
   {
-    src: "https://images.unsplash.com/photo-1470093851219-69951fcbb533?q=80&w=2070&auto=format&fit=crop",
+    src: {image3},
     alt: "Outdoor ceremony setup",
     className: "col-span-1",
   },
   {
-    src: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=2070&auto=format&fit=crop",
+    src: {image4},
     alt: "Celebration decor",
     className: "col-span-1 row-span-2",
   },
   {
-    src: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=2070&auto=format&fit=crop",
+    src: {image5},
+    alt: "Intimate dinner party",
+    className: "col-span-2",
+  },
+    {
+    src: {image6},
     alt: "Intimate dinner party",
     className: "col-span-2",
   },
