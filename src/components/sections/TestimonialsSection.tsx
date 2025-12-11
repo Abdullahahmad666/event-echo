@@ -33,8 +33,9 @@ export function TestimonialsSection() {
         </AnimatedSection>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 max-w-5xl mx-auto">
-          {testimonials.map((testimonial, index) => (
-            <Animation key={index} delay={index * 200}>
+          <Animation duration={25}>
+           {testimonials.map((testimonial, index) => (
+            <AnimatedSection key={index} delay={index * 200}>
               <blockquote className="text-center">
                 <p className="font-serif text-xl md:text-2xl lg:text-3xl text-foreground leading-relaxed italic mb-8">
                   "{testimonial.quote}"
@@ -50,8 +51,9 @@ export function TestimonialsSection() {
                   </cite>
                 </footer>
               </blockquote>
-            </Animation>
+            </AnimatedSection>
           ))}
+          </Animation>
         </div>
       </div>
     </section>
