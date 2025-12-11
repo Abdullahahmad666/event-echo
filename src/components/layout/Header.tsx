@@ -41,7 +41,7 @@ export function Header() {
             to="/"
             className="font-serif text-2xl md:text-3xl tracking-wider text-foreground hover:opacity-70 transition-opacity"
           >
-            Connecting the Dots
+            Connecting the Dots Decor
           </Link>
 
           {/* Desktop Navigation */}

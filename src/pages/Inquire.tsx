@@ -101,8 +101,8 @@ const Inquire = () => {
                     <p className="font-sans text-xs tracking-[0.15em] uppercase text-muted-foreground mb-1">
                       Email
                     </p>
-                    <a href="mailto:hello@elegantevents.com" className="text-foreground hover:text-soft-sienna transition-colors">
-                      hello@elegantevents.com
+                    <a href="mailto:saminatanveer@hotmail.com" className="text-foreground hover:text-soft-sienna transition-colors">
+                      saminatanveer@hotmail.com
                     </a>
                   </div>
                 </div>
@@ -113,7 +113,7 @@ const Inquire = () => {
                       Phone
                     </p>
                     <a href="tel:+1234567890" className="text-foreground hover:text-soft-sienna transition-colors">
-                      (123) 456-7890
+                      +19052999442
                     </a>
                   </div>
                 </div>
@@ -123,7 +123,7 @@ const Inquire = () => {
                     <p className="font-sans text-xs tracking-[0.15em] uppercase text-muted-foreground mb-1">
                       Location
                     </p>
-                    <p className="text-foreground">Los Angeles, California</p>
+                    <p className="text-foreground">Milton Ontario, Canada</p>
                   </div>
                 </div>
               </div>
