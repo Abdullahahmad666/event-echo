@@ -1,27 +1,30 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { AnimatedSection } from "../ui/AnimatedSection";
+import about from "../assets/about.jpeg";
+import services from "../assets/services.jpeg";
+import portfolio from "../assets/portfolio.jpeg";
 
 const previews = [
   {
     title: "About",
     subtitle: "Our Story",
     description: "Discover the passion and expertise behind every event we create.",
-    image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069&auto=format&fit=crop",
+    image: about,
     href: "/about",
   },
   {
     title: "Services",
     subtitle: "What We Do",
     description: "From intimate gatherings to grand celebrations, we offer complete event solutions.",
-    image: "https://images.unsplash.com/photo-1478146896981-b80fe463b330?q=80&w=2070&auto=format&fit=crop",
+    image: services,
     href: "/services",
   },
   {
     title: "Portfolio",
     subtitle: "Our Work",
     description: "Explore our collection of beautifully crafted events and celebrations.",
-    image: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=2069&auto=format&fit=crop",
+    image: portfolio,
     href: "/portfolio",
   },
 ];
