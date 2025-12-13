@@ -1,3 +1,4 @@
+import { Layout } from "@/components/layout/Layout";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import Animation from "@/components/ui/Animation";
 
@@ -24,6 +25,7 @@ const testimonials = [
 
 const Testimonials= () =>  {
   return (
+    <Layout>
     <section className="py-24 lg:py-32 bg-card">
       <div className="container mx-auto px-6 lg:px-12">
         {/* Heading */}
@@ -85,6 +87,7 @@ const Testimonials= () =>  {
         </Animation>
       </div>
     </section>
+    </Layout>
   );
-}
+};
 export default Testimonials;
