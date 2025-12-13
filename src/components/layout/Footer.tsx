@@ -24,6 +24,7 @@ export function Footer() {
             <nav className="flex flex-col gap-3">
               {[
                 { href: "/about", label: "About Us" },
+                {href: "/testimonials", label: "Testimonials" },
                 { href: "/services", label: "Services" },
                 { href: "/portfolio", label: "Portfolio" },
                 { href: "/inquire", label: "Get in Touch" },
