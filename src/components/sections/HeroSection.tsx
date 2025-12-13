@@ -17,7 +17,7 @@ export function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto mt-3">
+      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto mt-5">
         <p className="animate-fade-in text-primary-foreground/90 font-sans text-xs tracking-[0.3em] uppercase mb-6 mt-4">
           Luxury Event Planning
         </p>

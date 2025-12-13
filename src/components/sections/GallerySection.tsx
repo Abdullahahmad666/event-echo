@@ -6,6 +6,8 @@ import image4 from "../assets/image4.jpeg";
 import image5 from "../assets/image5.jpeg";
 import image6 from "../assets/image6.jpeg";
 import image8 from "../assets/image8.jpeg";
+import about from "../assets/about.jpeg";
+import aboutpage from "../assets/aboutpage.jpeg";
 
 const galleryImages = [
   {
@@ -29,6 +31,11 @@ const galleryImages = [
     className: "col-span-1",
   },
   {
+    src: about,
+    alt: "Celebration decor",
+    className: "col-span-1",
+  },
+  {
     src: image5,
     alt: "Intimate dinner party",
     className: "col-span-2",
@@ -40,6 +47,11 @@ const galleryImages = [
   },
   {
     src: image1,
+    alt: "Celebration decor",
+    className: "col-span-2 row-span-1",
+  },
+  {
+    src: aboutpage,
     alt: "Celebration decor",
     className: "col-span-2 row-span-1",
   },
