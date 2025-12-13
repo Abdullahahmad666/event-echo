@@ -2,7 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import about from "../components/assets/aboutus.jpeg";
+import about from "../components/assets/aboutus1.jpeg";
 
 const teamMembers = [
   {
@@ -108,7 +108,7 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
             {teamMembers.map((member, index) => (
               <AnimatedSection key={member.name} delay={index * 150}>
-                <div className="group">
+                <div className="group flex gap-6 items-start">
                   <div className="relative aspect-[3/4] overflow-hidden mb-6">
                     <img
                       src={member.image}
