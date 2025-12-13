@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const portfolioItems = [
   {
     id: "romantic-garden-wedding",
-    title: "Romantic Garden Wedding",
+    title: "Romantic Garden Weddings",
     location: "Malibu, California",
     date: "Spring 2024",
     category: "Wedding",
