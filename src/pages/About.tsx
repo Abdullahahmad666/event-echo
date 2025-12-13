@@ -3,6 +3,8 @@ import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import about from "../components/assets/aboutus1.jpeg";
+import ourstory from "../components/assets/ourstory.jpeg";
+import aboutpage from "../components/assets/aboutpage.jpeg";
 
 const teamMembers = [
   {
@@ -20,7 +22,7 @@ const About = () => {
       <section className="relative h-[60vh] min-h-[500px] flex items-end">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop"
+            src={ourstory}
             alt="Elegant event design"
             className="w-full h-full object-cover"
           />
@@ -42,7 +44,7 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             <AnimatedSection animation="slide-left">
               <img
-                src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069&auto=format&fit=crop"
+                src={aboutpage}
                 alt="Team at work"
                 className="w-full aspect-[4/5] object-cover"
               />
@@ -130,7 +132,7 @@ const About = () => {
             </h2>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-1 gap-12 items-center">
             {teamMembers.map((member, index) => (
               <AnimatedSection key={member.name} delay={index * 150}>
                 {/* Image */}
