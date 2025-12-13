@@ -2,6 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import ourservicesimg from "../components/assets/ourservices.jpeg";
 
 const services = [
   {
@@ -44,7 +45,7 @@ const Services = () => {
       <section className="relative h-[60vh] min-h-[500px] flex items-end">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=2069&auto=format&fit=crop"
+            src={ourservicesimg}
             alt="Elegant event setup"
             className="w-full h-full object-cover"
           />

@@ -9,7 +9,7 @@ export function Footer() {
           {/* Brand */}
           <div>
             <Link to="/" className="font-serif text-3xl tracking-wider text-foreground">
-              Connecting the Dotss Decor
+              Decor by Connecting the Dotss..
             </Link>
             <p className="mt-4 text-muted-foreground text-sm leading-relaxed max-w-xs">
               Creating unforgettable celebrations with meticulous attention to detail and timeless elegance.
@@ -75,7 +75,7 @@ export function Footer() {
 
         <div className="mt-16 pt-8 border-t border-border">
           <p className="text-center text-muted-foreground text-xs tracking-wide">
-            © {new Date().getFullYear()} Connecting the Dots. All rights reserved.
+            © {new Date().getFullYear()} Decor by Connecting the Dotss.. All rights reserved.
           </p>
         </div>
       </div>

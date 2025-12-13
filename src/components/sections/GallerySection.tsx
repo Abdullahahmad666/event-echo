@@ -5,10 +5,11 @@ import image3 from "../assets/image3.jpeg";
 import image4 from "../assets/image4.jpeg";
 import image5 from "../assets/image5.jpeg";
 import image6 from "../assets/image6.jpeg";
+import image8 from "../assets/image8.jpeg";
 
 const galleryImages = [
   {
-    src: image1,
+    src: image8,
     alt: "Elegant floral arrangement",
     className: "col-span-2 row-span-2",
   },
@@ -36,6 +37,11 @@ const galleryImages = [
     src: image6,
     alt: "Intimate dinner party",
     className: "col-span-2",
+  },
+  {
+    src: image1,
+    alt: "Celebration decor",
+    className: "col-span-2 row-span-1",
   },
 ];
 

@@ -41,7 +41,7 @@ export function Header() {
             to="/"
             className="font-serif font-bold text-2xl md:text-3xl tracking-wider text-primary hover:text-primary/80 transition-colors"
           >
-            Connecting the Dotss Decor
+            Decor by Connecting the Dotss..
           </Link>
 
           {/* Desktop Navigation */}
@@ -53,7 +53,7 @@ export function Header() {
                 className={`text-xs tracking-[0.2em] uppercase font-sans transition-all duration-300 hover:opacity-70 ${
                 location.pathname === link.href
                 ? "font-bold text-primary"
-                : "font-medium text-muted-foreground hover:text-foreground"
+                : "font-medium text-stone-800 hover:text-stone-600"
                 }`}
               >
                 {link.label}

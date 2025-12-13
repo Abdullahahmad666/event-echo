@@ -2,25 +2,14 @@ import { Layout } from "@/components/layout/Layout";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import about from "../components/assets/aboutus.jpeg";
 
 const teamMembers = [
   {
-    name: "Emily Parker",
+    name: "Samina Hashmi",
     title: "Founder & Creative Director",
-    bio: "With over 15 years in event design, Emily brings a refined aesthetic and passionate attention to every celebration she touches.",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1974&auto=format&fit=crop",
-  },
-  {
-    name: "James Chen",
-    title: "Lead Event Coordinator",
-    bio: "James ensures every event runs seamlessly, managing logistics with grace and precision that our clients have come to trust.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop",
-  },
-  {
-    name: "Sofia Martinez",
-    title: "Design Specialist",
-    bio: "Sofia's eye for color, texture, and detail transforms spaces into immersive experiences that captivate and inspire.",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop",
+    bio: "With over 10 years in event design, Samina brings a refined aesthetic and passionate attention to every celebration she touches.",
+    image: about,
   },
 ];
 
@@ -60,7 +49,7 @@ const About = () => {
             </AnimatedSection>
             <AnimatedSection animation="slide-right" delay={200}>
               <p className="font-sans text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">
-                Est. 2010
+                Est. 2012
               </p>
               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-8 leading-tight">
                 Crafting Celebrations with <em>Heart & Soul</em>
@@ -112,7 +101,7 @@ const About = () => {
               The Team
             </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground">
-              Meet the Creators
+              Meet the Creator
             </h2>
           </AnimatedSection>
 

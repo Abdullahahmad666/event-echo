@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { AnimatedSection } from "../ui/AnimatedSection";
-import about from "../assets/about.jpeg";
 import services from "../assets/services.jpeg";
 import portfolio from "../assets/portfolio.jpeg";
+import image7 from "../assets/image7.jpeg";
 
 const previews = [
   {
     title: "About",
     subtitle: "Our Story",
     description: "Discover the passion and expertise behind every event we create.",
-    image: about,
+    image: image7,
     href: "/about",
   },
   {
