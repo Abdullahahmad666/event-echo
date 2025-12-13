@@ -54,10 +54,14 @@ export function Header() {
               <Link
                 key={link.href}
                 to={link.href}
-                className={`text-xs tracking-[0.2em] uppercase font-sans text-primary-foreground transition-all duration-300 hover:opacity-70 ${
-                  location.pathname === link.href
+                className={`text-xs tracking-[0.2em] uppercase font-sans transition-all duration-300 ${
+                  isScrolled
+                    ? location.pathname === link.href
+                      ? "font-bold text-stone-800"
+                      : "font-medium text-stone-600 hover:text-stone-800"
+                    : location.pathname === link.href
                     ? "font-bold text-primary-foreground"
-                    : "font-medium text-primary-foreground-800 hover:text-primary-foreground-600"
+                    : "font-medium text-primary-foreground hover:opacity-70"
                 }`}
               >
                 {link.label}

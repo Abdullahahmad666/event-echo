@@ -135,28 +135,30 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             {teamMembers.map((member, index) => (
               <AnimatedSection key={member.name} delay={index * 150}>
-                {/* Image */}
-                <div className="relative aspect-[3/4] overflow-hidden w-full">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                  />
-                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                  {/* Image – LEFT */}
+                  <div className="relative aspect-[3/4] overflow-hidden w-full">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                    />
+                  </div>
 
-                {/* Text */}
-                <div>
-                  <h3 className="font-serif text-3xl text-foreground mb-2">
-                    {member.name}
-                  </h3>
+                  {/* Text – RIGHT */}
+                  <div>
+                    <h3 className="font-serif text-3xl text-foreground mb-2">
+                      {member.name}
+                    </h3>
 
-                  <p className="font-sans text-xs tracking-[0.2em] uppercase text-muted-foreground mb-6">
-                    {member.title}
-                  </p>
+                    <p className="font-sans text-xs tracking-[0.2em] uppercase text-muted-foreground mb-6">
+                      {member.title}
+                    </p>
 
-                  <p className="text-muted-foreground text-base leading-relaxed max-w-prose">
-                    {member.bio}
-                  </p>
+                    <p className="text-muted-foreground text-base leading-relaxed max-w-prose">
+                      {member.bio}
+                    </p>
+                  </div>
                 </div>
               </AnimatedSection>
             ))}
