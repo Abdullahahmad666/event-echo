@@ -1,6 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import Animation from "@/components/ui/Animation";
+import ourstory from "../components/assets/ourstory.jpeg";
 
 const testimonials = [
   {
