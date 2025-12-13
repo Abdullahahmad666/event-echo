@@ -26,7 +26,7 @@ const galleryImages = [
   {
     src: image4,
     alt: "Celebration decor",
-    className: "col-span-1 row-span-2",
+    className: "col-span-1",
   },
   {
     src: image5,
