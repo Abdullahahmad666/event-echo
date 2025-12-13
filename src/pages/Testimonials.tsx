@@ -26,6 +26,26 @@ const testimonials = [
 const Testimonials= () =>  {
   return (
     <Layout>
+        {/* Hero Banner */}
+      <section className="relative h-[60vh] min-h-[500px] flex items-end">
+        <div className="absolute inset-0">
+          <img
+            src={ourstory}
+            alt="Elegant event design"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-foreground/20" />
+        </div>
+        <div className="relative z-10 container mx-auto px-6 lg:px-12 pb-16">
+          <p className="animate-fade-in text-primary-foreground/80 font-sans text-xs tracking-[0.3em] uppercase mb-4">
+            Testimonials
+          </p>
+          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary-foreground animate-fade-in-delay-1">
+            Our Client's Say
+          </h1>
+        </div>
+      </section>
+
     <section className="py-24 lg:py-32 bg-card">
       <div className="container mx-auto px-6 lg:px-12">
         {/* Heading */}
