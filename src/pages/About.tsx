@@ -132,11 +132,11 @@ const About = () => {
             </h2>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-1 gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             {teamMembers.map((member, index) => (
               <AnimatedSection key={member.name} delay={index * 150}>
                 {/* Image */}
-                <div className="relative aspect-[3/4] overflow-hidden">
+                <div className="relative aspect-[3/4] overflow-hidden w-full">
                   <img
                     src={member.image}
                     alt={member.name}
