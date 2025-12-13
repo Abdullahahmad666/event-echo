@@ -39,9 +39,9 @@ export function Header() {
         <div className="container mx-auto px-6 lg:px-12 flex items-center justify-between">
           <Link
             to="/"
-            className="font-serif text-2xl md:text-3xl tracking-wider text-foreground hover:opacity-70 transition-opacity"
+            className="font-serif font-bold text-2xl md:text-3xl tracking-wider text-primary hover:text-primary/80 transition-colors"
           >
-            Connecting the Dots Decor
+            Connecting the Dotss Decor
           </Link>
 
           {/* Desktop Navigation */}
@@ -50,10 +50,10 @@ export function Header() {
               <Link
                 key={link.href}
                 to={link.href}
-                className={`text-xs tracking-[0.2em] uppercase font-sans font-medium transition-all duration-300 hover:opacity-60 ${
-                  location.pathname === link.href
-                    ? "text-foreground"
-                    : "text-muted-foreground"
+                className={`text-xs tracking-[0.2em] uppercase font-sans transition-all duration-300 hover:opacity-70 ${
+                location.pathname === link.href
+                ? "font-bold text-primary"
+                : "font-medium text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {link.label}
