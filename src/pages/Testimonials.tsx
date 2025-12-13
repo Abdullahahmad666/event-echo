@@ -1,5 +1,5 @@
-import { AnimatedSection } from "../ui/AnimatedSection";
-import Animation from "../ui/Animation";
+import { AnimatedSection } from "@/components/ui/AnimatedSection";
+import Animation from "@/components/ui/Animation";
 
 const testimonials = [
   {
