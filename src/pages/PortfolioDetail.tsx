@@ -11,7 +11,7 @@ import img6 from "@/components/assets/mehendi/img6.jpg"
 import img7 from "@/components/assets/mehendi/img7.jpg"
 import img8 from "@/components/assets/mehendi/img8.jpg"
 import img9 from "@/components/assets/mehendi/img9.jpg"
-import img10 from "@/components/assets/mehendi/img10.jpg"
+
 
 
 const portfolioData: Record<string, {
@@ -40,8 +40,6 @@ const portfolioData: Record<string, {
       img7,
       img8,
       img9,
-      img10,
-      
     ],
   },
   "modern-gala-evening": {
