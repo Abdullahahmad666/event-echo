@@ -19,7 +19,7 @@ const portfolioItems = [
     title: "Nikkah Ceremony",
     location: "Milton Ontario, Canada",
     date: "Winter 2024",
-    category: "Corporate",
+    category: "Wedding",
     image: img6,
   },
   {

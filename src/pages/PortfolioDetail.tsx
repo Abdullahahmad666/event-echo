@@ -67,7 +67,7 @@ const portfolioData: Record<string, {
     title: "Nikkah Ceremony",
     location: "Milton Ontario, Canada",
     date: "Winter 2024",
-    category: "Corporate",
+    category: "Wedding",
     description: "An intimate Nikkah ceremony defined by timeless elegance and spiritual serenity. Soft florals, gentle lighting, and thoughtful details created a sacred atmosphere, where tradition and beauty came together to honor a meaningful union.",
     heroImage: bimg1,
     galleryImages: [

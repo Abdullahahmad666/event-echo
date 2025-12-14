@@ -3,6 +3,7 @@ import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import ourservicesimg from "../components/assets/ourservices.jpeg";
+import img1 from "@/components/assets/walima/img13.jpg"
 
 const services = [
   {
@@ -26,7 +27,7 @@ const services = [
     subtitle: "Visual Storytelling",
     description: "Transform your space into an immersive experience. Our design team creates cohesive visual narratives through thoughtful color palettes, textures, lighting, and bespoke details that reflect your unique style and story.",
     features: ["Concept development", "Color & theme design", "Floral & decor styling", "Tablescape design", "Lighting design"],
-    image: "https://images.unsplash.com/photo-1478146896981-b80fe463b330?q=80&w=2070&auto=format&fit=crop",
+    image: img1,
     reverse: false,
   },
 ];
