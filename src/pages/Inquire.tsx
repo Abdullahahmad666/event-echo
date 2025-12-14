@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, MapPin, Phone } from "lucide-react";
+import hero from "@/components/assets/hero.jpeg";
 
 const eventTypes = [
   "Wedding",
@@ -65,7 +66,7 @@ const Inquire = () => {
       <section className="relative h-[50vh] min-h-[400px] flex items-end">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop"
+            src={hero}
             alt="Contact us"
             className="w-full h-full object-cover"
           />
