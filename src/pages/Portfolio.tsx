@@ -3,6 +3,7 @@ import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Link } from "react-router-dom";
 import img5 from "@/components/assets/mehendi/img5.jpg"
 import img6 from "@/components/assets/barat/img5.jpg"
+import img9 from "@/components/assets/walima/img9.jpg"
 
 const portfolioItems = [
   {
@@ -22,37 +23,14 @@ const portfolioItems = [
     image: img6,
   },
   {
-    id: "intimate-anniversary",
-    title: "Intimate Anniversary",
-    location: "Santa Barbara, California",
-    date: "Fall 2023",
-    category: "Celebration",
-    image: "https://images.unsplash.com/photo-1470093851219-69951fcbb533?q=80&w=2070&auto=format&fit=crop",
-  },
-  {
     id: "coastal-retreat-wedding",
-    title: "Coastal Retreat Wedding",
-    location: "Big Sur, California",
+    title: "Wedding/Baraat Ceremony",
+    location: "Milton Ontario, Canada",
     date: "Summer 2023",
     category: "Wedding",
-    image: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=2070&auto=format&fit=crop",
+    image: img9,
   },
-  {
-    id: "enchanted-forest-celebration",
-    title: "Enchanted Forest Celebration",
-    location: "Napa Valley, California",
-    date: "Spring 2023",
-    category: "Birthday",
-    image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=2070&auto=format&fit=crop",
-  },
-  {
-    id: "urban-rooftop-soiree",
-    title: "Urban Rooftop Soirée",
-    location: "San Francisco, California",
-    date: "Fall 2023",
-    category: "Corporate",
-    image: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=2069&auto=format&fit=crop",
-  },
+  
 ];
 
 const Portfolio = () => {

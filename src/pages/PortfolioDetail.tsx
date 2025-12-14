@@ -15,6 +15,21 @@ import bimg1 from "@/components/assets/barat/img5.jpg"
 import bimg2 from "@/components/assets/barat/img3.jpg"
 import bimg3 from "@/components/assets/barat/img4.jpg"
 import portfolio from "@/components/assets/portfolio.jpeg";
+import bimg7 from "@/components/assets/barat/img7.jpg"
+import wimg1 from "@/components/assets/walima/img14.jpg"
+import wimg2 from "@/components/assets/walima/img2.jpg"
+import wimg3 from "@/components/assets/walima/img3.jpg"
+import wimg4 from "@/components/assets/walima/img4.jpg"
+import wimg5 from "@/components/assets/walima/img5.jpg"
+import wimg6 from "@/components/assets/walima/img6.jpg"
+import wimg7 from "@/components/assets/walima/img7.jpg"
+import wimg8 from "@/components/assets/walima/img8.jpg"
+import wimg9 from "@/components/assets/walima/img9.jpg"
+import wimg10 from "@/components/assets/walima/img10.jpg"
+import wimg11 from "@/components/assets/walima/img11.jpg"
+import wimg12 from "@/components/assets/walima/img12.jpg"
+import wimg13 from "@/components/assets/walima/img13.jpg"
+import wimg14 from "@/components/assets/walima/img15.jpg"
 
 
 
@@ -59,64 +74,37 @@ const portfolioData: Record<string, {
       bimg1,
       bimg2,
       bimg3,
-      portfolio
+      portfolio,
+      bimg7,
      
     ],
   },
-  "intimate-anniversary": {
-    title: "Intimate Anniversary",
-    location: "Santa Barbara, California",
-    date: "Fall 2023",
-    category: "Celebration",
-    description: "A golden anniversary celebration that honored fifty years of love. The intimate gathering brought together three generations of family in a warm, candlelit setting filled with personal touches and cherished memories.",
-    heroImage: "https://images.unsplash.com/photo-1470093851219-69951fcbb533?q=80&w=2070&auto=format&fit=crop",
-    galleryImages: [
-      "https://images.unsplash.com/photo-1470093851219-69951fcbb533?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop",
-    ],
-  },
+  
   "coastal-retreat-wedding": {
-    title: "Coastal Retreat Wedding",
-    location: "Big Sur, California",
+    title: "Wedding/Baraat Ceremony",
+    location: "Milton Ontario, Canada",
     date: "Summer 2023",
     category: "Wedding",
-    description: "Perched on dramatic cliffs overlooking the Pacific, this wedding embraced the raw beauty of Big Sur. Natural elements, wind-swept florals, and a sense of wild romance defined this unforgettable celebration.",
-    heroImage: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=2070&auto=format&fit=crop",
+    description: "A grand wedding celebration marked by the energy of the Baraat and the joy of togetherness. Rich florals, glowing lights, and traditional details set the stage as family and friends gathered to celebrate a union filled with love, heritage, and unforgettable moments.",
+    heroImage: wimg1,
     galleryImages: [
-      "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=2098&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1478146896981-b80fe463b330?q=80&w=2070&auto=format&fit=crop",
+      wimg1,
+      wimg2,
+      wimg3,
+      wimg4,
+      wimg5,
+      wimg6,
+      wimg7,
+      wimg8,
+      wimg9,
+      wimg10,
+      wimg11,
+      wimg12,
+      wimg13,
+      wimg14,
     ],
   },
-  "enchanted-forest-celebration": {
-    title: "Enchanted Forest Celebration",
-    location: "Napa Valley, California",
-    date: "Spring 2023",
-    category: "Birthday",
-    description: "A milestone birthday transformed into a magical woodland experience. Guests wandered through candlelit paths, discovered hidden lounges, and celebrated under a canopy of twinkling lights and lush greenery.",
-    heroImage: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=2070&auto=format&fit=crop",
-    galleryImages: [
-      "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1470093851219-69951fcbb533?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=2069&auto=format&fit=crop",
-    ],
-  },
-  "urban-rooftop-soiree": {
-    title: "Urban Rooftop Soirée",
-    location: "San Francisco, California",
-    date: "Fall 2023",
-    category: "Corporate",
-    description: "A sophisticated corporate celebration with sweeping city views. Modern design met warm hospitality as guests mingled under the stars, surrounded by sleek furniture, ambient lighting, and impeccable service.",
-    heroImage: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=2069&auto=format&fit=crop",
-    galleryImages: [
-      "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=2069&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=2098&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?q=80&w=2070&auto=format&fit=crop",
-    ],
-  },
+ 
 };
 
 const PortfolioDetail = () => {
