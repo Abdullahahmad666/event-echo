@@ -1,15 +1,16 @@
 import { Layout } from "@/components/layout/Layout";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Link } from "react-router-dom";
+import img5 from "@/components/assets/mehendi/img5.jpg"
 
 const portfolioItems = [
   {
     id: "romantic-garden-wedding",
-    title: "Romantic Garden Weddings",
-    location: "Malibu, California",
+    title: "Mehendi/Mayo/Dholki",
+    location: "Milton Ontario, Canada",
     date: "Spring 2024",
     category: "Wedding",
-    image: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop",
+    image: img5,
   },
   {
     id: "modern-gala-evening",

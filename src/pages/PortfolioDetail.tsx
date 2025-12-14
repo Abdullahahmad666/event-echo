@@ -2,6 +2,17 @@ import { useParams, Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import img12 from "@/components/assets/mehendi/img12.jpg"
+import img1 from "@/components/assets/mehendi/img1.jpg"
+import img2 from "@/components/assets/mehendi/img2.jpg"
+import img3 from "@/components/assets/mehendi/img3.jpg"
+import img4 from "@/components/assets/mehendi/img4.jpg"
+import img6 from "@/components/assets/mehendi/img6.jpg"
+import img7 from "@/components/assets/mehendi/img7.jpg"
+import img8 from "@/components/assets/mehendi/img8.jpg"
+import img9 from "@/components/assets/mehendi/img9.jpg"
+import img10 from "@/components/assets/mehendi/img10.jpg"
+
 
 const portfolioData: Record<string, {
   title: string;
@@ -14,18 +25,23 @@ const portfolioData: Record<string, {
 }> = {
   "romantic-garden-wedding": {
     title: "Romantic Garden Wedding",
-    location: "Malibu, California",
+    location: "Milton Ontario, Canada",
     date: "Spring 2024",
     category: "Wedding",
-    description: "A breathtaking garden celebration filled with soft blooms, candlelight, and intimate moments. The couple wanted their wedding to feel like stepping into a secret garden, where every corner revealed a new romantic vignette.",
-    heroImage: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop",
+    description: "A vibrant pre-wedding celebration filled with lush florals, warm lights, and joyful rhythms. The family envisioned a Mehendi and Dholki that felt intimate yet festive, where every corner reflected color, tradition, and moments of togetherness wrapped in music and laughter.",
+    heroImage: img12,
     galleryImages: [
-      "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1470093851219-69951fcbb533?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1478146896981-b80fe463b330?q=80&w=2070&auto=format&fit=crop",
+      img12,
+      img1,
+      img2,
+      img3,
+      img4,
+      img6,
+      img7,
+      img8,
+      img9,
+      img10,
+      
     ],
   },
   "modern-gala-evening": {
