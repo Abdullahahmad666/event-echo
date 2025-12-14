@@ -2,6 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Link } from "react-router-dom";
 import img5 from "@/components/assets/mehendi/img5.jpg"
+import img6 from "@/components/assets/barat/img5.jpg"
 
 const portfolioItems = [
   {
@@ -14,11 +15,11 @@ const portfolioItems = [
   },
   {
     id: "modern-gala-evening",
-    title: "Modern Gala Evening",
-    location: "Los Angeles, California",
+    title: "Nikkah Ceremony",
+    location: "Milton Ontario, Canada",
     date: "Winter 2024",
     category: "Corporate",
-    image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=2098&auto=format&fit=crop",
+    image: img6,
   },
   {
     id: "intimate-anniversary",

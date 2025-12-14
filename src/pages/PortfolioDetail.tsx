@@ -11,6 +11,12 @@ import img6 from "@/components/assets/mehendi/img6.jpg"
 import img7 from "@/components/assets/mehendi/img7.jpg"
 import img8 from "@/components/assets/mehendi/img8.jpg"
 import img9 from "@/components/assets/mehendi/img9.jpg"
+import bimg1 from "@/components/assets/barat/img5.jpg"
+import bimg2 from "@/components/assets/barat/img3.jpg"
+import bimg3 from "@/components/assets/barat/img4.jpg"
+import portfolio from "@/components/assets/portfolio.jpeg";
+
+
 
 
 
@@ -24,7 +30,7 @@ const portfolioData: Record<string, {
   galleryImages: string[];
 }> = {
   "romantic-garden-wedding": {
-    title: "Romantic Garden Wedding",
+    title: "Mehendi/Mayo/Dholki",
     location: "Milton Ontario, Canada",
     date: "Spring 2024",
     category: "Wedding",
@@ -43,17 +49,18 @@ const portfolioData: Record<string, {
     ],
   },
   "modern-gala-evening": {
-    title: "Modern Gala Evening",
-    location: "Los Angeles, California",
+    title: "Nikkah Ceremony",
+    location: "Milton Ontario, Canada",
     date: "Winter 2024",
     category: "Corporate",
-    description: "An elegant black-tie gala that seamlessly blended corporate sophistication with artistic flair. The evening featured dramatic lighting, contemporary installations, and impeccable attention to every guest experience.",
-    heroImage: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=2098&auto=format&fit=crop",
+    description: "An intimate Nikkah ceremony defined by timeless elegance and spiritual serenity. Soft florals, gentle lighting, and thoughtful details created a sacred atmosphere, where tradition and beauty came together to honor a meaningful union.",
+    heroImage: bimg1,
     galleryImages: [
-      "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=2098&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=2069&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?q=80&w=2070&auto=format&fit=crop",
+      bimg1,
+      bimg2,
+      bimg3,
+      portfolio
+     
     ],
   },
   "intimate-anniversary": {
