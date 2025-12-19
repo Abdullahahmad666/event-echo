@@ -8,6 +8,19 @@ import video1 from "@/components/assets/testimonials/video1.mp4";
 import video2 from "@/components/assets/testimonials/video2.mp4";
 import video3 from "@/components/assets/testimonials/video3.mp4";
 
+// Testimonial images
+import img1 from "@/components/assets/testimonials/img1.png";
+import img2 from "@/components/assets/testimonials/img2.png";
+import img3 from "@/components/assets/testimonials/img3.png";
+import img4 from "@/components/assets/testimonials/img4.png";
+import img5 from "@/components/assets/testimonials/img5.png";
+import img6 from "@/components/assets/testimonials/img6.png";
+import img7 from "@/components/assets/testimonials/img7.png";
+import img8 from "@/components/assets/testimonials/img8.png";
+import img9 from "@/components/assets/testimonials/img9.png";
+
+const testimonialImages = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
+
 const videoTestimonials = [
   {
     id: 1,
@@ -133,9 +146,35 @@ const Testimonials = () => {
               </AnimatedSection>
             ))}
           </div>
+
+          {/* Testimonial Images Gallery */}
+          <AnimatedSection className="mt-20">
+            <div className="text-center mb-12">
+              <p className="font-sans text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">
+                Real Feedback
+              </p>
+              <h3 className="font-serif text-2xl md:text-3xl lg:text-4xl text-foreground">
+                Screenshot Testimonials
+              </h3>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {testimonialImages.map((image, index) => (
+                <div
+                  key={index}
+                  className="group relative overflow-hidden rounded-lg shadow-lg transition-all duration-500 hover:shadow-xl hover:-translate-y-1"
+                >
+                  <img
+                    src={image}
+                    alt={`Client testimonial ${index + 1}`}
+                    className="w-full h-auto object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </div>
+              ))}
+            </div>
+          </AnimatedSection>
         </div>
       </section>
-
       {/* Video Modal */}
       {activeVideo && (
         <div
