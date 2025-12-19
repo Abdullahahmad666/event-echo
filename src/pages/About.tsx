@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import about from "../components/assets/aboutus1.jpeg";
 import ourstory from "../components/assets/ourstory.jpeg";
-import aboutpage from "../components/assets/aboutpage.jpeg";
+import aboutpage from "../components/assets/about.jpeg";
 
 const teamMembers = [
   {

@@ -8,7 +8,12 @@ interface LazyImageProps {
   containerClassName?: string;
 }
 
-export function LazyImage({ src, alt, className, containerClassName }: LazyImageProps) {
+export function LazyImage({
+  src,
+  alt,
+  className,
+  containerClassName,
+}: LazyImageProps) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(false);
   const imgRef = useRef<HTMLDivElement>(null);
@@ -24,24 +29,22 @@ export function LazyImage({ src, alt, className, containerClassName }: LazyImage
       { threshold: 0.1, rootMargin: "100px" }
     );
 
-    if (imgRef.current) {
-      observer.observe(imgRef.current);
-    }
+    if (imgRef.current) observer.observe(imgRef.current);
 
     return () => observer.disconnect();
   }, []);
 
   return (
-    <div ref={imgRef} className={cn("relative overflow-hidden", containerClassName)}>
-      {/* Skeleton placeholder */}
-      <div
-        className={cn(
-          "absolute inset-0 bg-muted animate-pulse transition-opacity duration-500",
-          isLoaded ? "opacity-0" : "opacity-100"
-        )}
-      />
-      
-      {/* Actual image - only load when in view */}
+    <div
+      ref={imgRef}
+      className={cn("relative overflow-hidden", containerClassName)}
+    >
+      {/* Skeleton — render ONLY while loading */}
+      {!isLoaded && (
+        <div className="absolute inset-0 bg-muted animate-pulse" />
+      )}
+
+      {/* Image */}
       {isInView && (
         <img
           src={src}
