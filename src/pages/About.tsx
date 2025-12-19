@@ -10,7 +10,7 @@ const teamMembers = [
   {
     name: "Samina Hashmi",
     title: "Founder & Creative Director",
-    bio: "With over 10 years in event design, Samina brings a refined aesthetic and passionate attention to every celebration she touches. She believes in turning ideas into meaningful experiences, thoughtfully crafted to reflect each client’s unique story.",
+    bio: "A proud mother of four and a blessed grandmother, Samina holds a Master’s degree in Public Administration and brings over a decade of experience in wedding decoration and event planning. As a dedicated Umrah group leader, she finds joy in uniting people through faith, celebration, and meaningful experiences.With a refined aesthetic and a heartfelt attention to detail, Samina believes every event tells a story. Energetic, passionate, and purpose-driven, she transforms ideas into beautifully curated moments that reflect each client’s unique journey. Deeply grateful for every blessing, she continues to serve with sincerity and vision — Alhamdulillah.",
     image: about,
   },
 ];

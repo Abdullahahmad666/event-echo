@@ -8,25 +8,27 @@ import video1 from "@/components/assets/testimonials/video1.mp4";
 import video2 from "@/components/assets/testimonials/video2.mp4";
 import video3 from "@/components/assets/testimonials/video3.mp4";
 
-
 const videoTestimonials = [
   {
     id: 1,
-    thumbnail: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&auto=format&fit=crop",
+    thumbnail:
+      "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&auto=format&fit=crop",
     videoUrl: video1,
     title: "Sarah & James",
     event: "Wedding Celebration",
   },
   {
     id: 2,
-    thumbnail: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&auto=format&fit=crop",
+    thumbnail:
+      "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&auto=format&fit=crop",
     videoUrl: video2,
     title: "The Martinez Family",
     event: "Wedding Celebration",
   },
   {
     id: 3,
-    thumbnail: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&auto=format&fit=crop",
+    thumbnail:
+      "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&auto=format&fit=crop",
     videoUrl: video3,
     title: "Emily & David",
     event: "Wedding Celebration",
@@ -107,15 +109,18 @@ const Testimonials = () => {
                     className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-foreground/40 transition-opacity duration-500 group-hover:bg-foreground/60" />
-                  
+
                   {/* Play Button */}
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-primary/90 flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:bg-primary">
-                      <Play className="w-6 h-6 md:w-8 md:h-8 text-primary-foreground ml-1" fill="currentColor" />
+                      <Play
+                        className="w-6 h-6 md:w-8 md:h-8 text-primary-foreground ml-1"
+                        fill="currentColor"
+                      />
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Video Info */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-foreground/80 to-transparent">
                   <h3 className="font-serif text-xl text-primary-foreground mb-1">
@@ -137,21 +142,31 @@ const Testimonials = () => {
           className="fixed inset-0 z-50 flex items-center justify-center bg-foreground/90 animate-fade-in"
           onClick={() => setActiveVideo(null)}
         >
+          {/* Close Button */}
           <button
             className="absolute top-6 right-6 w-12 h-12 rounded-full bg-background/10 flex items-center justify-center text-primary-foreground hover:bg-background/20 transition-colors duration-300"
             onClick={() => setActiveVideo(null)}
           >
             <X className="w-6 h-6" />
           </button>
+
+          {/* Video Container */}
           <div
-            className="w-full max-w-4xl mx-4 animate-scale-in"
+            className="mx-4 animate-scale-in flex items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
             <video
               src={activeVideo}
               controls
               autoPlay
-              className="w-full rounded-lg shadow-2xl"
+              className="
+          max-h-[80vh]
+          w-auto
+          max-w-[420px]
+          rounded-lg
+          shadow-2xl
+          object-contain
+        "
             />
           </div>
         </div>
