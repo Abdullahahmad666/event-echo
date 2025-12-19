@@ -1,5 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
+import { LazyImage } from "@/components/ui/LazyImage";
 import Animation from "@/components/ui/Animation";
 import ourstory from "../components/assets/ourstory.jpeg";
 import { useState } from "react";
@@ -163,12 +164,13 @@ const Testimonials = () => {
                   key={index}
                   className="group relative overflow-hidden rounded-lg shadow-lg transition-all duration-500 hover:shadow-xl hover:-translate-y-1"
                 >
-                  <img
+                  <LazyImage
                     src={image}
                     alt={`Client testimonial ${index + 1}`}
                     className="w-full h-auto object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    containerClassName="w-full"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                 </div>
               ))}
             </div>

@@ -1,4 +1,5 @@
 import { AnimatedSection } from "../ui/AnimatedSection";
+import { LazyImage } from "../ui/LazyImage";
 import image1 from "../assets/image1.jpeg";
 import image2 from "../assets/image2.jpeg";
 import image3 from "../assets/image3.jpeg";
@@ -79,12 +80,13 @@ export function GallerySection() {
               className={image.className}
             >
               <div className="relative h-full min-h-[200px] md:min-h-[250px] overflow-hidden group cursor-pointer">
-                <img
+                <LazyImage
                   src={image.src}
                   alt={image.alt}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  containerClassName="w-full h-full"
                 />
-                <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/30 transition-colors duration-300" />
+                <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/30 transition-colors duration-300 pointer-events-none" />
               </div>
             </AnimatedSection>
           ))}

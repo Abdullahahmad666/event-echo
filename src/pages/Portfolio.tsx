@@ -1,5 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
+import { LazyImage } from "@/components/ui/LazyImage";
 import { Link } from "react-router-dom";
 import img5 from "@/components/assets/mehendi/img5.jpg"
 import img6 from "@/components/assets/barat/img5.jpg"
@@ -70,12 +71,13 @@ const Portfolio = () => {
               <AnimatedSection key={item.id} delay={index * 100} animation="scale-in">
                 <Link to={`/portfolio/${item.id}`} className="group block">
                   <div className="relative aspect-[3/4] overflow-hidden mb-6">
-                    <img
+                    <LazyImage
                       src={item.image}
                       alt={item.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      containerClassName="w-full h-full"
                     />
-                    <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/30 transition-colors duration-300 flex items-center justify-center">
+                    <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/30 transition-colors duration-300 flex items-center justify-center pointer-events-none">
                       <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-sans text-xs tracking-[0.2em] uppercase text-primary-foreground border border-primary-foreground px-6 py-3">
                         View Project
                       </span>
