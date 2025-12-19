@@ -4,28 +4,32 @@ import Animation from "@/components/ui/Animation";
 import ourstory from "../components/assets/ourstory.jpeg";
 import { useState } from "react";
 import { Play, X } from "lucide-react";
+import video1 from "@/components/assets/testimonials/video1.mp4";
+import video2 from "@/components/assets/testimonials/video2.mp4";
+import video3 from "@/components/assets/testimonials/video3.mp4";
+
 
 const videoTestimonials = [
   {
     id: 1,
     thumbnail: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&auto=format&fit=crop",
-    videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
+    videoUrl: video1,
     title: "Sarah & James",
     event: "Wedding Celebration",
   },
   {
     id: 2,
     thumbnail: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&auto=format&fit=crop",
-    videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
+    videoUrl: video2,
     title: "The Martinez Family",
-    event: "Anniversary Party",
+    event: "Wedding Celebration",
   },
   {
     id: 3,
     thumbnail: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&auto=format&fit=crop",
-    videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
+    videoUrl: video3,
     title: "Emily & David",
-    event: "Engagement Ceremony",
+    event: "Wedding Celebration",
   },
 ];
 
