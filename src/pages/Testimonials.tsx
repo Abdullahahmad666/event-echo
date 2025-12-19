@@ -9,15 +9,15 @@ import video2 from "@/components/assets/testimonials/video2.mp4";
 import video3 from "@/components/assets/testimonials/video3.mp4";
 
 // Testimonial images
-import img1 from "@/components/assets/testimonials/img1.png";
-import img2 from "@/components/assets/testimonials/img2.png";
-import img3 from "@/components/assets/testimonials/img3.png";
-import img4 from "@/components/assets/testimonials/img4.png";
-import img5 from "@/components/assets/testimonials/img5.png";
-import img6 from "@/components/assets/testimonials/img6.png";
-import img7 from "@/components/assets/testimonials/img7.png";
-import img8 from "@/components/assets/testimonials/img8.png";
-import img9 from "@/components/assets/testimonials/img9.png";
+import img1 from "../components/assets/testimonials/img1.PNG";
+import img2 from "../components/assets/testimonials/img2.PNG";
+import img3 from "../components/assets/testimonials/img3.PNG";
+import img4 from "../components/assets/testimonials/img4.PNG";
+import img5 from "../components/assets/testimonials/img5.PNG";
+import img6 from "../components/assets/testimonials/img6.PNG";
+import img7 from "../components/assets/testimonials/img7.PNG";
+import img8 from "../components/assets/testimonials/img8.PNG";
+import img9 from "../components/assets/testimonials/img9.PNG";
 
 const testimonialImages = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
 
