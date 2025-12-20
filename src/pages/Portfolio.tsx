@@ -38,9 +38,9 @@ const Portfolio = () => {
   return (
     <Layout>
       {/* Hero Banner */}
-      <section className="relative h-[60vh] min-h-[500px] flex items-end">
-        <div className="absolute inset-0">
-          <img
+      <section className="relative h-[60vh] min-h-[500px] flex items-end overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden">
+          <LazyImage
             src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?q=80&w=2070&auto=format&fit=crop"
             alt="Portfolio showcase"
             className="w-full h-full object-cover"

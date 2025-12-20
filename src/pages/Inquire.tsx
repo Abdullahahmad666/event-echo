@@ -64,8 +64,8 @@ const Inquire = () => {
   return (
     <Layout>
       {/* Hero Banner */}
-      <section className="relative h-[50vh] min-h-[400px] flex items-end">
-        <div className="absolute inset-0">
+      <section className="relative h-[50vh] min-h-[400px] flex items-end overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden">
           <LazyImage
             src={hero}
             alt="Contact us"
