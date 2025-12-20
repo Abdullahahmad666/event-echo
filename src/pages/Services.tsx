@@ -2,7 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import ourservices from "@/components/assets/services.jpeg";
+import ourservices from "@/components/assets/image7.jpeg";
 import services1 from "@/components/assets/service1.jpg";
 import img1 from "@/components/assets/walima/img13.jpg"
 
