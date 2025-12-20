@@ -45,8 +45,8 @@ const Services = () => {
   return (
     <Layout>
       {/* Hero Banner */}
-      <section className="relative h-[60vh] min-h-[500px] flex items-end">
-        <div className="absolute inset-0">
+      <section className="relative h-[60vh] min-h-[500px] flex items-end overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden">
           <LazyImage
             src={ourservices}
             alt="Elegant event setup"
