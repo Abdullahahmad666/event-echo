@@ -1,5 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
+import { LazyImage } from "@/components/ui/LazyImage";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import about from "../components/assets/aboutus1.jpeg";
@@ -21,7 +22,7 @@ const About = () => {
       {/* Hero Banner */}
       <section className="relative h-[60vh] min-h-[500px] flex items-end">
         <div className="absolute inset-0">
-          <img
+          <LazyImage
             src={ourstory}
             alt="Elegant event design"
             className="w-full h-full object-cover"
@@ -43,7 +44,7 @@ const About = () => {
         <div className="container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             <AnimatedSection animation="slide-left">
-              <img
+              <LazyImage
                 src={aboutpage}
                 alt="Team at work"
                 className="w-full aspect-[4/5] object-cover"
@@ -137,7 +138,7 @@ const About = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 {/* Image – LEFT */}
                 <div className="relative aspect-[3/4] overflow-hidden w-full">
-                  <img
+                  <LazyImage
                     src={member.image}
                     alt={member.name}
                     className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"

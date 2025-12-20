@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
+import { LazyImage } from "@/components/ui/LazyImage";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import img12 from "@/components/assets/mehendi/img12.jpg"
 import img1 from "@/components/assets/mehendi/img1.jpg"
@@ -131,7 +132,7 @@ const PortfolioDetail = () => {
       {/* Hero Banner */}
       <section className="relative h-[70vh] min-h-[600px] flex items-end">
         <div className="absolute inset-0">
-          <img
+          <LazyImage
             src={project.heroImage}
             alt={project.title}
             className="w-full h-full object-cover"
@@ -179,7 +180,7 @@ const PortfolioDetail = () => {
                 className={index === 0 ? "md:col-span-2" : ""}
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
-                  <img
+                  <LazyImage
                     src={image}
                     alt={`${project.title} - Image ${index + 1}`}
                     className="w-full h-full object-cover"

@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { AnimatedSection } from "../ui/AnimatedSection";
+import { LazyImage } from "../ui/LazyImage";
 
 export function CTASection() {
   return (
     <section className="relative py-32 lg:py-40 overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img
+        <LazyImage
           src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?q=80&w=2070&auto=format&fit=crop"
           alt="Elegant event setting"
           className="w-full h-full object-cover"

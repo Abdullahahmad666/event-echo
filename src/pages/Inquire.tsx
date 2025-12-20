@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
+import { LazyImage } from "@/components/ui/LazyImage";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -65,7 +66,7 @@ const Inquire = () => {
       {/* Hero Banner */}
       <section className="relative h-[50vh] min-h-[400px] flex items-end">
         <div className="absolute inset-0">
-          <img
+          <LazyImage
             src={hero}
             alt="Contact us"
             className="w-full h-full object-cover"
