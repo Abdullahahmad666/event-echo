@@ -242,7 +242,7 @@ const Inquire = () => {
                     value={formData.budget}
                     onChange={handleChange}
                     className="border-border bg-transparent focus:border-foreground transition-colors"
-                    placeholder="e.g., $1,000 - $10,000"
+                    placeholder="e.g., $100 - $10,000"
                   />
                 </div>
 
