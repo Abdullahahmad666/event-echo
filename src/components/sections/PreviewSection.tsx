@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { AnimatedSection } from "../ui/AnimatedSection";
+import { LazyImage } from "../ui/LazyImage";
 import services from "../assets/services.jpeg";
 import portfolio from "../assets/portfolio.jpeg";
 import image7 from "../assets/image7.jpeg";
@@ -38,7 +39,7 @@ export function PreviewSection() {
             <AnimatedSection key={preview.title} delay={index * 150}>
               <Link to={preview.href} className="group block">
                 <div className="relative aspect-[3/4] overflow-hidden mb-6">
-                  <img
+                  <LazyImage
                     src={preview.image}
                     alt={preview.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"

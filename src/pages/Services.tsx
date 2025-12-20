@@ -1,5 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
+import { LazyImage } from "@/components/ui/LazyImage";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import ourservices from "@/components/assets/image7.jpeg";
@@ -46,7 +47,7 @@ const Services = () => {
       {/* Hero Banner */}
       <section className="relative h-[60vh] min-h-[500px] flex items-end">
         <div className="absolute inset-0">
-          <img
+          <LazyImage
             src={ourservices}
             alt="Elegant event setup"
             className="w-full h-full object-cover"
@@ -68,8 +69,8 @@ const Services = () => {
         <section key={service.title} className={`py-24 lg:py-32 ${index % 2 === 0 ? 'bg-background' : 'bg-secondary'}`}>
           <div className="container mx-auto px-6 lg:px-12">
             <div className={`grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center ${service.reverse ? 'lg:flex-row-reverse' : ''}`}>
-              <AnimatedSection animation={service.reverse ? "slide-right" : "slide-left"} className={service.reverse ? "lg:order-2" : ""}>
-                <img
+            <AnimatedSection animation={service.reverse ? "slide-right" : "slide-left"} className={service.reverse ? "lg:order-2" : ""}>
+                <LazyImage
                   src={service.image}
                   alt={service.title}
                   className="w-full aspect-[4/5] object-cover"
@@ -130,7 +131,7 @@ const Services = () => {
       {/* CTA */}
       <section className="relative py-32 lg:py-40 overflow-hidden">
         <div className="absolute inset-0">
-          <img
+          <LazyImage
             src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=2070&auto=format&fit=crop"
             alt="Celebration"
             className="w-full h-full object-cover"
