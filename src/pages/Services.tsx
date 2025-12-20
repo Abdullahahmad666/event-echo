@@ -2,7 +2,8 @@ import { Layout } from "@/components/layout/Layout";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import ourservicesimg from "../components/assets/ourservices.jpeg";
+import ourservices from "@/components/assets/services.jpeg";
+import services1 from "@/components/assets/service1.jpeg";
 import img1 from "@/components/assets/walima/img13.jpg"
 
 const services = [
@@ -11,7 +12,7 @@ const services = [
     subtitle: "Complete Event Management",
     description: "From the initial concept to the final farewell, we handle every aspect of your event. Our comprehensive planning service includes vendor coordination, timeline management, budget oversight, and on-site execution—allowing you to fully enjoy your celebration.",
     features: ["Venue selection & booking", "Vendor sourcing & management", "Budget planning & tracking", "Timeline coordination", "Day-of execution"],
-    image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=2098&auto=format&fit=crop",
+    image: services1,
     reverse: false,
   },
   {
@@ -46,7 +47,7 @@ const Services = () => {
       <section className="relative h-[60vh] min-h-[500px] flex items-end">
         <div className="absolute inset-0">
           <img
-            src={ourservicesimg}
+            src={ourservices}
             alt="Elegant event setup"
             className="w-full h-full object-cover"
           />

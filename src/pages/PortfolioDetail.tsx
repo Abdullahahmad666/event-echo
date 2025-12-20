@@ -5,8 +5,8 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import img12 from "@/components/assets/mehendi/img12.jpg"
 import img1 from "@/components/assets/mehendi/img1.jpg"
 import img2 from "@/components/assets/mehendi/img2.jpg"
-import img3 from "@/components/assets/mehendi/img3.jpg"
-import img4 from "@/components/assets/mehendi/img4.jpg"
+import img3 from "@/components/assets/mehendi/mehendi1.jpg"
+import img4 from "@/components/assets/mehendi/mehendi2.jpg"
 import img6 from "@/components/assets/mehendi/img6.jpg"
 import img7 from "@/components/assets/mehendi/img7.jpg"
 import img8 from "@/components/assets/mehendi/img8.jpg"
@@ -83,7 +83,7 @@ const portfolioData: Record<string, {
   "coastal-retreat-wedding": {
     title: "Wedding/Baraat Ceremony",
     location: "Milton Ontario, Canada",
-    date: "Summer 2023",
+    date: "Summer 2025",
     category: "Wedding",
     description: "A grand wedding celebration marked by the energy of the Baraat and the joy of togetherness. Rich florals, glowing lights, and traditional details set the stage as family and friends gathered to celebrate a union filled with love, heritage, and unforgettable moments.",
     heroImage: wimg1,
