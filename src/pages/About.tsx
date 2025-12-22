@@ -20,12 +20,12 @@ const About = () => {
   return (
     <Layout>
       {/* Hero Banner */}
-      <section className="relative h-[60vh] min-h-[500px] flex items-end overflow-hidden">
+      <section className="relative h-[50vh] md:h-[60vh] min-h-[350px] md:min-h-[500px] flex items-end overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <LazyImage
             src={ourstory}
             alt="Elegant event design"
-            className="w-full h-full object-cover"
+            containerClassName="absolute inset-0 w-full h-full"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-foreground/20" />
         </div>
@@ -44,11 +44,13 @@ const About = () => {
         <div className="container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             <AnimatedSection animation="slide-left">
-              <LazyImage
-                src={aboutpage}
-                alt="Team at work"
-                className="w-full aspect-[4/5] object-cover"
-              />
+              <div className="relative aspect-[4/5] overflow-hidden">
+                <LazyImage
+                  src={aboutpage}
+                  alt="Team at work"
+                  containerClassName="absolute inset-0 w-full h-full"
+                />
+              </div>
             </AnimatedSection>
             <AnimatedSection animation="slide-right" delay={200}>
               <p className="font-sans text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">
@@ -141,7 +143,8 @@ const About = () => {
                   <LazyImage
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                    containerClassName="absolute inset-0 w-full h-full"
+                    className="transition-transform duration-700 hover:scale-105"
                   />
                 </div>
 

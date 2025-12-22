@@ -64,12 +64,12 @@ const Inquire = () => {
   return (
     <Layout>
       {/* Hero Banner */}
-      <section className="relative h-[50vh] min-h-[400px] flex items-end overflow-hidden">
+      <section className="relative h-[40vh] md:h-[50vh] min-h-[300px] md:min-h-[400px] flex items-end overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <LazyImage
             src={heroimage}
             alt="Contact us"
-            className="w-full h-full object-cover"
+            containerClassName="absolute inset-0 w-full h-full"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-foreground/20" />
         </div>

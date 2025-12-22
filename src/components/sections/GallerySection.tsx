@@ -83,8 +83,8 @@ export function GallerySection() {
                 <LazyImage
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
-                  containerClassName="w-full h-full"
+                  containerClassName="absolute inset-0 w-full h-full"
+                  className="transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/30 transition-colors duration-300 pointer-events-none" />
               </div>

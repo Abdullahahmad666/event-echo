@@ -5,13 +5,13 @@ import { LazyImage } from "../ui/LazyImage";
 
 export function CTASection() {
   return (
-    <section className="relative py-32 lg:py-40 overflow-hidden">
+    <section className="relative py-24 md:py-32 lg:py-40 overflow-hidden min-h-[50vh] md:min-h-[60vh]">
       {/* Background Image */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 overflow-hidden">
         <LazyImage
           src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?q=80&w=2070&auto=format&fit=crop"
           alt="Elegant event setting"
-          className="w-full h-full object-cover"
+          containerClassName="absolute inset-0 w-full h-full"
         />
         <div className="absolute inset-0 bg-foreground/50" />
       </div>

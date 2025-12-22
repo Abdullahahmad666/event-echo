@@ -76,13 +76,12 @@ const Testimonials = () => {
   return (
     <Layout>
       {/* Hero Banner */}
-      <section className="relative h-[50vh] md:h-[60vh] min-h-[400px] flex items-end overflow-hidden">
+      <section className="relative h-[40vh] md:h-[50vh] min-h-[300px] md:min-h-[400px] flex items-end overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <LazyImage
             src={ourstory}
             alt="Elegant event design"
-            className="w-full h-full object-cover object-center"
-            containerClassName="w-full h-full"
+            containerClassName="absolute inset-0 w-full h-full"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-foreground/20" />
         </div>
@@ -121,8 +120,8 @@ const Testimonials = () => {
                   <LazyImage
                     src={video.thumbnail}
                     alt={video.title}
-                    className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-110"
-                    containerClassName="w-full h-full"
+                    containerClassName="absolute inset-0 w-full h-full"
+                    className="transition-transform duration-700 ease-out group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-foreground/40 transition-opacity duration-500 group-hover:bg-foreground/60" />
 
@@ -164,13 +163,13 @@ const Testimonials = () => {
               {testimonialImages.map((image, index) => (
                 <div
                   key={index}
-                  className="group relative overflow-hidden rounded-lg shadow-lg transition-all duration-500 hover:shadow-xl hover:-translate-y-1"
+                  className="group relative overflow-hidden rounded-lg shadow-lg transition-all duration-500 hover:shadow-xl hover:-translate-y-1 aspect-auto"
                 >
                   <LazyImage
                     src={image}
                     alt={`Client testimonial ${index + 1}`}
-                    className="w-full h-auto object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                     containerClassName="w-full"
+                    className="w-full h-auto transition-transform duration-700 ease-out group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                 </div>
