@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, MapPin, Phone } from "lucide-react";
-import heroimage from"@component/assets/hero.jpeg";
+import heroimage from"../components/assets/hero.jpeg";
 
 const eventTypes = [
   "Wedding",
