@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, MapPin, Phone } from "lucide-react";
-import ourservices from "@/components/assets/image7.jpeg";
+import heroimage from"@component/assets/hero.jpeg";
 
 const eventTypes = [
   "Wedding",
@@ -67,7 +67,7 @@ const Inquire = () => {
       <section className="relative h-[50vh] min-h-[400px] flex items-end overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <LazyImage
-            src={ourservices}
+            src={heroimage}
             alt="Contact us"
             className="w-full h-full object-cover"
           />

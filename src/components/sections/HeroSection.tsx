@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { LazyImage } from "../ui/LazyImage";
-import heroimage from"../assets/hero.jpeg";
+
+import ourservices from "../assets/image7.jpeg";
 
 
 export function HeroSection() {
@@ -10,7 +11,7 @@ export function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <LazyImage
-          src={heroimage}
+          src={ourservices}
           alt="Elegant wedding reception with floral arrangements"
           className="w-full h-full object-cover"
         />

@@ -28,7 +28,7 @@ const videoTestimonials = [
     thumbnail:
       "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&auto=format&fit=crop",
     videoUrl: video1,
-    title: "Sarah & James",
+    title: "Bana & Tareq",
     event: "Wedding Celebration",
   },
   {
@@ -36,7 +36,7 @@ const videoTestimonials = [
     thumbnail:
       "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&auto=format&fit=crop",
     videoUrl: video2,
-    title: "The Martinez Family",
+    title: "Rifai Family",
     event: "Wedding Celebration",
   },
   {
@@ -44,7 +44,7 @@ const videoTestimonials = [
     thumbnail:
       "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&auto=format&fit=crop",
     videoUrl: video3,
-    title: "Emily & David",
+    title: "Zainab's Family",
     event: "Wedding Celebration",
   },
 ];
@@ -64,7 +64,7 @@ const testimonials = [
   },
   {
     quote:
-      "Working with Connecting the Dots was an absolute Outstanding. Their creativity and attention to detail exceeded all our expectations.",
+      "Working with Connecting the Dots was an absolute Outstanding. Their creativity and attention to detail was perfect.",
     author: "The Talha Family",
     event: "1st Anniversary Celebration",
   },
