@@ -38,12 +38,12 @@ const Portfolio = () => {
   return (
     <Layout>
       {/* Hero Banner */}
-      <section className="relative h-[60vh] min-h-[500px] flex items-end overflow-hidden">
+      <section className="relative h-[50vh] md:h-[60vh] min-h-[350px] md:min-h-[500px] flex items-end overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <LazyImage
             src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?q=80&w=2070&auto=format&fit=crop"
             alt="Portfolio showcase"
-            className="w-full h-full object-cover"
+            containerClassName="absolute inset-0 w-full h-full"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-foreground/20" />
         </div>
@@ -74,8 +74,8 @@ const Portfolio = () => {
                     <LazyImage
                       src={item.image}
                       alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      containerClassName="w-full h-full"
+                      containerClassName="absolute inset-0 w-full h-full"
+                      className="transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/30 transition-colors duration-300 flex items-center justify-center pointer-events-none">
                       <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-sans text-xs tracking-[0.2em] uppercase text-primary-foreground border border-primary-foreground px-6 py-3">

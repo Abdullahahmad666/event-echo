@@ -130,12 +130,12 @@ const PortfolioDetail = () => {
   return (
     <Layout>
       {/* Hero Banner */}
-      <section className="relative h-[70vh] min-h-[600px] flex items-end overflow-hidden">
+      <section className="relative h-[50vh] md:h-[70vh] min-h-[350px] md:min-h-[600px] flex items-end overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <LazyImage
             src={project.heroImage}
             alt={project.title}
-            className="w-full h-full object-cover"
+            containerClassName="absolute inset-0 w-full h-full"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 to-foreground/20" />
         </div>
@@ -183,7 +183,7 @@ const PortfolioDetail = () => {
                   <LazyImage
                     src={image}
                     alt={`${project.title} - Image ${index + 1}`}
-                    className="w-full h-full object-cover"
+                    containerClassName="absolute inset-0 w-full h-full"
                   />
                 </div>
               </AnimatedSection>

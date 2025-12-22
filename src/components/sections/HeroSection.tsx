@@ -7,13 +7,13 @@ import ourservices from "../assets/image7.jpeg";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 overflow-hidden">
         <LazyImage
           src={ourservices}
           alt="Elegant wedding reception with floral arrangements"
-          className="w-full h-full object-cover"
+          containerClassName="absolute inset-0 w-full h-full"
         />
         <div className="absolute inset-0 bg-foreground/30" />
       </div>

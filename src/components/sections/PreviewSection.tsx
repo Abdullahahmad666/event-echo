@@ -42,8 +42,8 @@ export function PreviewSection() {
                   <LazyImage
                     src={preview.image}
                     alt={preview.title}
-                    className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                    containerClassName="w-full h-full"
+                    containerClassName="absolute inset-0 w-full h-full"
+                    className="transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-foreground/10 group-hover:bg-foreground/20 transition-colors duration-300" />
                 </div>

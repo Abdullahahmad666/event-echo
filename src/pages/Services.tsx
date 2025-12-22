@@ -45,12 +45,12 @@ const Services = () => {
   return (
     <Layout>
       {/* Hero Banner */}
-      <section className="relative h-[60vh] min-h-[500px] flex items-end overflow-hidden">
+      <section className="relative h-[50vh] md:h-[60vh] min-h-[350px] md:min-h-[500px] flex items-end overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <LazyImage
             src={ourservices}
             alt="Elegant event setup"
-            className="w-full h-full object-cover"
+            containerClassName="absolute inset-0 w-full h-full"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-foreground/20" />
         </div>
@@ -70,11 +70,13 @@ const Services = () => {
           <div className="container mx-auto px-6 lg:px-12">
             <div className={`grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center ${service.reverse ? 'lg:flex-row-reverse' : ''}`}>
             <AnimatedSection animation={service.reverse ? "slide-right" : "slide-left"} className={service.reverse ? "lg:order-2" : ""}>
-                <LazyImage
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full aspect-[4/5] object-cover"
-                />
+                <div className="relative aspect-[4/5] overflow-hidden">
+                  <LazyImage
+                    src={service.image}
+                    alt={service.title}
+                    containerClassName="absolute inset-0 w-full h-full"
+                  />
+                </div>
               </AnimatedSection>
               <AnimatedSection animation={service.reverse ? "slide-left" : "slide-right"} delay={200} className={service.reverse ? "lg:order-1" : ""}>
                 <p className="font-sans text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">
@@ -129,12 +131,12 @@ const Services = () => {
       </section>
 
       {/* CTA */}
-      <section className="relative py-32 lg:py-40 overflow-hidden">
-        <div className="absolute inset-0">
+      <section className="relative py-24 md:py-32 lg:py-40 overflow-hidden min-h-[50vh] md:min-h-[60vh]">
+        <div className="absolute inset-0 overflow-hidden">
           <LazyImage
             src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=2070&auto=format&fit=crop"
             alt="Celebration"
-            className="w-full h-full object-cover"
+            containerClassName="absolute inset-0 w-full h-full"
           />
           <div className="absolute inset-0 bg-foreground/50" />
         </div>

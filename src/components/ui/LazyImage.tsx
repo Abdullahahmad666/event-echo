@@ -44,7 +44,7 @@ export function LazyImage({
         <div className="absolute inset-0 bg-muted animate-pulse" />
       )}
 
-      {/* Image */}
+      {/* Image - use absolute positioning to fill container completely */}
       {isInView && (
         <img
           src={src}
@@ -52,7 +52,7 @@ export function LazyImage({
           loading="lazy"
           onLoad={() => setIsLoaded(true)}
           className={cn(
-            "transition-opacity duration-700 ease-out",
+            "absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-700 ease-out",
             isLoaded ? "opacity-100" : "opacity-0",
             className
           )}
