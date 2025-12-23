@@ -9,16 +9,16 @@ import video1 from "@/components/assets/testimonials/video1.mp4";
 import video2 from "@/components/assets/testimonials/video2.mp4";
 import video3 from "@/components/assets/testimonials/video3.mp4";
 
-// Testimonial images
-import img1 from "@/components/assets/testimonials/img1.png";
-import img2 from "@/components/assets/testimonials/img2.png";
-import img3 from "@/components/assets/testimonials/img3.png";
-import img4 from "@/components/assets/testimonials/img4.png";
-import img5 from "@/components/assets/testimonials/img5.png";
-import img6 from "@/components/assets/testimonials/img6.png";
-import img7 from "@/components/assets/testimonials/img7.png";
-import img8 from "@/components/assets/testimonials/img8.png";
-import img9 from "@/components/assets/testimonials/img9.png";
+// Testimonial images - using .PNG extension to match actual files
+import img1 from "@/components/assets/testimonials/img1.PNG";
+import img2 from "@/components/assets/testimonials/img2.PNG";
+import img3 from "@/components/assets/testimonials/img3.PNG";
+import img4 from "@/components/assets/testimonials/img4.PNG";
+import img5 from "@/components/assets/testimonials/img5.PNG";
+import img6 from "@/components/assets/testimonials/img6.PNG";
+import img7 from "@/components/assets/testimonials/img7.PNG";
+import img8 from "@/components/assets/testimonials/img8.PNG";
+import img9 from "@/components/assets/testimonials/img9.PNG";
 
 const testimonialImages = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
 
@@ -163,13 +163,17 @@ const Testimonials = () => {
               {testimonialImages.map((image, index) => (
                 <div
                   key={index}
-                  className="group relative overflow-hidden rounded-lg shadow-lg transition-all duration-500 hover:shadow-xl hover:-translate-y-1 aspect-auto"
+                  className="group relative overflow-hidden rounded-lg shadow-lg transition-all duration-500 hover:shadow-xl hover:-translate-y-1 bg-muted min-h-[200px]"
                 >
-                  <LazyImage
+                  <img
                     src={image}
                     alt={`Client testimonial ${index + 1}`}
-                    containerClassName="w-full"
+                    loading="lazy"
                     className="w-full h-auto transition-transform duration-700 ease-out group-hover:scale-105"
+                    onLoad={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.parentElement?.classList.remove('min-h-[200px]');
+                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                 </div>
