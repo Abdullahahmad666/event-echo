@@ -47,11 +47,11 @@ export function Footer() {
             </h4>
             <div className="flex flex-col gap-4">
               <a
-                href="mailto:saminatanveer@hotmail.com"
+                href="mailto:decorbyconnectingthedotss@gmail.com"
                 className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors text-sm"
               >
                 <Mail size={16} />
-                saminatanveer@hotmail.com
+                decorbyconnectingthedotss@gmail.com
               </a>
               <div className="flex items-center gap-3 text-muted-foreground text-sm">
                 <Phone size={16} />
