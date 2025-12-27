@@ -41,47 +41,46 @@ const handleSubmit = async (e: React.FormEvent) => {
   setIsSubmitting(true);
 
   try {
-   const response = await fetch("/api/send-email", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify(formData),
-});
-
-console.log("Response:", response);
-    const data = await response.json();
+    const response = await fetch('/api/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
 
     if (!response.ok) {
-      throw new Error(data.message || "Failed to send inquiry");
+      throw new Error('Failed to send email');
     }
 
+    await response.json(); // now SAFE
+
     toast({
-      title: "Inquiry Sent Successfully ✨",
-      description: "We’ll be in touch within 24–48 hours to discuss your event.",
+      title: 'Thank you for your inquiry!',
+      description: "We'll be in touch within 24–48 hours.",
     });
 
-    // Reset form
     setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      eventType: "",
-      eventDate: "",
-      guestCount: "",
-      budget: "",
-      message: "",
+      name: '',
+      email: '',
+      phone: '',
+      eventType: '',
+      eventDate: '',
+      guestCount: '',
+      budget: '',
+      message: '',
     });
-  } catch (error) {
-    console.error(error);
-
+  } catch (err) {
     toast({
-      title: "Something went wrong",
-      description: "Please try again or contact us directly.",
-      variant: "destructive",
+      title: 'Something went wrong',
+      description: 'Please try again later.',
+      variant: 'destructive',
     });
   } finally {
     setIsSubmitting(false);
   }
 };
+
 
 
   return (
