@@ -47,7 +47,7 @@ const handleSubmit = async (e: React.FormEvent) => {
   body: JSON.stringify(formData),
 });
 
-
+console.log("Response:", response);
     const data = await response.json();
 
     if (!response.ok) {
