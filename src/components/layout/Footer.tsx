@@ -68,7 +68,7 @@ export function Footer() {
                 className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors text-sm"
               >
                 <Instagram size={16} />
-                @connectingthedotss
+                @decorbyconnectingthedotss
               </a>
             </div>
           </div>
