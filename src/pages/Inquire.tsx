@@ -36,18 +36,31 @@ const Inquire = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-
-    toast({
-      title: "Thank you for your inquiry!",
-      description: "We'll be in touch within 24-48 hours to discuss your event.",
+  try {
+    const response = await fetch("http://localhost:5000/send-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
     });
 
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.message || "Failed to send inquiry");
+    }
+
+    toast({
+      title: "Inquiry Sent Successfully ✨",
+      description: "We’ll be in touch within 24–48 hours to discuss your event.",
+    });
+
+    // Reset form
     setFormData({
       name: "",
       email: "",
@@ -58,8 +71,19 @@ const Inquire = () => {
       budget: "",
       message: "",
     });
+  } catch (error) {
+    console.error(error);
+
+    toast({
+      title: "Something went wrong",
+      description: "Please try again or contact us directly.",
+      variant: "destructive",
+    });
+  } finally {
     setIsSubmitting(false);
-  };
+  }
+};
+
 
   return (
     <Layout>
