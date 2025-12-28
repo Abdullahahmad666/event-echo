@@ -39,6 +39,91 @@ const About = () => {
         </div>
       </section>
 
+
+{/* Team Section */}
+      <section className="py-24 lg:py-32 bg-background">
+        <div className="container mx-auto px-6 lg:px-12">
+          <AnimatedSection className="text-center mb-16">
+            <p className="font-sans text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">
+              The Team
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground">
+              Meet the Creator
+            </h2>
+          </AnimatedSection>
+
+          {teamMembers.map((member, index) => (
+            <AnimatedSection key={member.name} delay={index * 150}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                {/* Image – LEFT */}
+                <div className="relative aspect-[3/4] overflow-hidden w-full">
+                  <LazyImage
+                    src={member.image}
+                    alt={member.name}
+                    containerClassName="absolute inset-0 w-full h-full"
+                    className="transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+
+                {/* Text – RIGHT */}
+                <div>
+                  <h3 className="font-serif text-3xl text-foreground mb-2">
+                    {member.name}
+                  </h3>
+
+                  <p className="font-sans text-xs tracking-[0.2em] uppercase text-muted-foreground mb-6">
+                    {member.title}
+                  </p>
+
+                  <p className="text-muted-foreground text-base leading-relaxed max-w-prose">
+                    {member.bio}
+                  </p>
+                </div>
+              </div>
+            </AnimatedSection>
+          ))}
+        </div>
+      </section>
+
+
+      {/* Values Section */}
+      <section className="py-24 lg:py-32 bg-secondary">
+        <div className="container mx-auto px-6 lg:px-12">
+          <AnimatedSection className="text-center mb-16">
+            <h2 className="font-serif text-3xl md:text-4xl text-foreground">
+              What Guides Us
+            </h2>
+          </AnimatedSection>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+            {[
+              {
+                title: "Elegance",
+                desc: "Timeless sophistication in every detail we design.",
+              },
+              {
+                title: "Intention",
+                desc: "Every choice serves a purpose in your celebration.",
+              },
+              {
+                title: "Excellence",
+                desc: "Uncompromising quality from concept to execution.",
+              },
+            ].map((value, index) => (
+              <AnimatedSection
+                key={value.title}
+                delay={index * 150}
+                className="text-center"
+              >
+                <h3 className="font-serif text-2xl text-foreground mb-4">
+                  {value.title}
+                </h3>
+                <p className="text-muted-foreground text-sm">{value.desc}</p>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Story Section */}
       <section className="py-24 lg:py-32 bg-background">
         <div className="container mx-auto px-6 lg:px-12">
@@ -84,89 +169,7 @@ const About = () => {
           </div>
         </div>
       </section>
-
-      {/* Values Section */}
-      <section className="py-24 lg:py-32 bg-secondary">
-        <div className="container mx-auto px-6 lg:px-12">
-          <AnimatedSection className="text-center mb-16">
-            <h2 className="font-serif text-3xl md:text-4xl text-foreground">
-              What Guides Us
-            </h2>
-          </AnimatedSection>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
-            {[
-              {
-                title: "Elegance",
-                desc: "Timeless sophistication in every detail we design.",
-              },
-              {
-                title: "Intention",
-                desc: "Every choice serves a purpose in your celebration.",
-              },
-              {
-                title: "Excellence",
-                desc: "Uncompromising quality from concept to execution.",
-              },
-            ].map((value, index) => (
-              <AnimatedSection
-                key={value.title}
-                delay={index * 150}
-                className="text-center"
-              >
-                <h3 className="font-serif text-2xl text-foreground mb-4">
-                  {value.title}
-                </h3>
-                <p className="text-muted-foreground text-sm">{value.desc}</p>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-24 lg:py-32 bg-background">
-        <div className="container mx-auto px-6 lg:px-12">
-          <AnimatedSection className="text-center mb-16">
-            <p className="font-sans text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">
-              The Team
-            </p>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground">
-              Meet the Creator
-            </h2>
-          </AnimatedSection>
-
-          {teamMembers.map((member, index) => (
-            <AnimatedSection key={member.name} delay={index * 150}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                {/* Image – LEFT */}
-                <div className="relative aspect-[3/4] overflow-hidden w-full">
-                  <LazyImage
-                    src={member.image}
-                    alt={member.name}
-                    containerClassName="absolute inset-0 w-full h-full"
-                    className="transition-transform duration-700 hover:scale-105"
-                  />
-                </div>
-
-                {/* Text – RIGHT */}
-                <div>
-                  <h3 className="font-serif text-3xl text-foreground mb-2">
-                    {member.name}
-                  </h3>
-
-                  <p className="font-sans text-xs tracking-[0.2em] uppercase text-muted-foreground mb-6">
-                    {member.title}
-                  </p>
-
-                  <p className="text-muted-foreground text-base leading-relaxed max-w-prose">
-                    {member.bio}
-                  </p>
-                </div>
-              </div>
-            </AnimatedSection>
-          ))}
-        </div>
-      </section>
+      
 
       {/* CTA */}
       <section className="py-24 lg:py-32 bg-card">
