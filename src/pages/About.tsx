@@ -48,7 +48,7 @@ const About = () => {
               The Team
             </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground">
-              Meet the Creator
+              Meet the Face Behind the Magic
             </h2>
           </AnimatedSection>
 
