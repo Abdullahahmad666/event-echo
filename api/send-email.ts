@@ -34,6 +34,7 @@ export default async function handler(
     await transporter.sendMail({
       from: `"Event Inquiry" <${process.env.EMAIL_USER}>`,
       to: process.env.EMAIL_USER,
+      replyTo: email,
       subject: `New Event Inquiry from ${name}`,
       html: `
         <h3>New Inquiry</h3>
