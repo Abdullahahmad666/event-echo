@@ -5,7 +5,6 @@ export default async function handler(
   req: VercelRequest,
   res: VercelResponse
 ) {
-  
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Method Not Allowed' });
   }
@@ -19,6 +18,8 @@ export default async function handler(
       eventDate,
       guestCount,
       budget,
+      colorScheme,
+      areasRequiringDecor,
       message,
     } = req.body;
 
@@ -38,16 +39,17 @@ export default async function handler(
         <h3>New Inquiry</h3>
         <p><b>Name:</b> ${name}</p>
         <p><b>Email:</b> ${email}</p>
-        <p><b>Phone:</b> ${phone}</p>
+        <p><b>Phone:</b> ${phone || 'Not provided'}</p>
         <p><b>Event Type:</b> ${eventType}</p>
-        <p><b>Event Date:</b> ${eventDate}</p>
-        <p><b>Guests:</b> ${guestCount}</p>
-        <p><b>Budget:</b> ${budget}</p>
+        <p><b>Event Date:</b> ${eventDate || 'Not provided'}</p>
+        <p><b>Guests:</b> ${guestCount || 'Not provided'}</p>
+        <p><b>Color Scheme:</b> ${colorScheme || 'Not provided'}</p>
+        <p><b>Areas Requiring Decor:</b> ${areasRequiringDecor || 'Not specified'}</p>
+        <p><b>Estimated Budget:</b> ${budget || 'Not specified'}</p>
         <p><b>Message:</b><br/>${message}</p>
       `,
     });
 
-    // ✅ ALWAYS return JSON
     return res.status(200).json({ success: true });
   } catch (error) {
     console.error(error);
