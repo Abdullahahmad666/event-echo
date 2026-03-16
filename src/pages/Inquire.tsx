@@ -31,13 +31,13 @@ const decorAreas = [
   "Entrance",
   "Stage/Altar",
   "Aisle",
-  "Mandap",
+  "Nikah Stage",
   "Reception Area",
   "Dining Area",
   "Photo Booth",
   "Guest Table",
   "Sweetheart Table",
-  "Bar Area",
+  "Mehndi Area",
 ];
 
 const Inquire = () => {
