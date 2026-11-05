@@ -51,6 +51,7 @@ export default {
         "soft-sienna": "hsl(var(--soft-sienna))",
         "deep-espresso": "hsl(var(--deep-espresso))",
         cream: "hsl(var(--cream))",
+        clay: "hsl(var(--clay))",
       },
       fontFamily: {
         serif: ['Cormorant Garamond', 'Georgia', 'serif'],
