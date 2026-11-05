@@ -20,10 +20,12 @@ export function StickyPackageBar({ low, high, hasPackage, visible, onView }: Sti
       )}
     >
       <div className="mx-auto flex max-w-xl items-center gap-3 bg-deep-espresso py-3 pl-5 pr-3 text-cream shadow-[0_18px_40px_-18px_rgba(30,20,15,0.7)]">
-        <span className="font-sans text-[0.6rem] uppercase tracking-[0.2em] text-cream/60">Your package</span>
-        <span className="min-w-0 flex-1 truncate font-serif text-xl">
-          {hasPackage ? <AnimatedRange low={low} high={high} /> : "Let's talk"}
-        </span>
+        <div className="min-w-0 flex-1">
+          <span className="block font-sans text-[0.6rem] uppercase tracking-[0.2em] text-cream/60">Your package</span>
+          <span className="block font-serif text-xl leading-tight sm:text-2xl">
+            {hasPackage ? <AnimatedRange low={low} high={high} /> : "Let's talk"}
+          </span>
+        </div>
         <button
           type="button"
           tabIndex={visible ? 0 : -1}

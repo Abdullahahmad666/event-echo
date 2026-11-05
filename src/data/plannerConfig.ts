@@ -138,5 +138,11 @@ export const plannerConfig = {
    */
   bookingUrl: "",
 
+  /** Shown on the Inquire page for people who'd rather reach out directly. */
+  contact: {
+    email: "decorbyconnectingthedots@gmail.com",
+    phone: "+1 (905) 299-9442",
+  },
+
   categories,
 };

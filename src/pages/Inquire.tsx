@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { LazyImage } from "@/components/ui/LazyImage";
 import { useToast } from "@/hooks/use-toast";
@@ -59,7 +59,6 @@ const Inquire = () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          source: "planner",
           ...details,
           eventType: state.eventType,
           guestCount: state.guests,
@@ -74,6 +73,8 @@ const Inquire = () => {
               category: i.category.label,
               tier: i.category.tiers[i.tierIndex!].name,
               description: i.category.tiers[i.tierIndex!].description,
+              level: i.tierIndex! + 1,
+              levels: i.category.tiers.length,
             })),
             notIncluded: pkg.items.filter((i) => i.tierIndex === null).map((i) => i.category.label),
             switchedOff: state.priorities
@@ -92,7 +93,7 @@ const Inquire = () => {
     } catch {
       toast({
         title: "Something went wrong",
-        description: "Your package wasn't sent. Please try again, or email us directly.",
+        description: `Your package wasn't sent. Please try again, or email us at ${plannerConfig.contact.email}.`,
         variant: "destructive",
       });
     } finally {
@@ -128,13 +129,23 @@ const Inquire = () => {
                   <span className="text-foreground">No name, email or phone number needed to look around</span>, we
                   only ask for those if you'd like to book a call.
                 </p>
-                <Link
-                  to="/inquire/details"
-                  className="group inline-flex items-center gap-2 text-sm text-foreground underline decoration-clay/40 underline-offset-4 hover:decoration-clay"
-                >
-                  Prefer to tell us everything? Use the full form
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
+                <div className="flex flex-col gap-2 text-sm lg:items-end">
+                  <span className="font-sans text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                    Rather just talk?
+                  </span>
+                  <a
+                    href={`mailto:${plannerConfig.contact.email}`}
+                    className="inline-flex items-center gap-2 text-foreground transition-colors hover:text-clay"
+                  >
+                    <Mail className="h-4 w-4 text-clay" /> {plannerConfig.contact.email}
+                  </a>
+                  <a
+                    href={`tel:${plannerConfig.contact.phone.replace(/[^\d+]/g, "")}`}
+                    className="inline-flex items-center gap-2 text-foreground transition-colors hover:text-clay"
+                  >
+                    <Phone className="h-4 w-4 text-clay" /> {plannerConfig.contact.phone}
+                  </a>
+                </div>
               </div>
 
               <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,440px)] lg:gap-12">
