@@ -7,22 +7,31 @@
  * The prices below are placeholders — replace them with your real ranges.
  */
 
-import stageClassic from "@/components/assets/hero.jpeg";
-import stageStatement from "@/components/assets/walima/img14.jpg";
-import stageGrand from "@/components/assets/image4.jpeg";
+import stageClassic from "@/components/assets/planner/stage-classic-draped.jpeg";
+import stageStatement from "@/components/assets/planner/stage-statement-gold-arches.jpeg";
+import stageGrand from "@/components/assets/planner/stage-grand-gold-frames.jpeg";
+import partitionFloral from "@/components/assets/walima/img14.jpg";
+import entertainment from "@/components/assets/image4.jpeg";
 import entranceSimple from "@/components/assets/barat/img5.jpg";
 import entranceStyled from "@/components/assets/walima/img11.jpg";
-import entranceFull from "@/components/assets/image1.jpeg";
+import entranceGrand from "@/components/assets/planner/entrance-grand-floral.jpeg";
+import aisleStyled from "@/components/assets/image1.jpeg";
+import aisleFull from "@/components/assets/planner/aisle-full-walkway.jpeg";
+import familySimple from "@/components/assets/planner/family-table-simple.jpeg";
+import familyStyled from "@/components/assets/planner/family-table-styled.jpeg";
+import familyLuxe from "@/components/assets/planner/family-table-luxe.jpeg";
 import tablesSimple from "@/components/assets/walima/img12.jpg";
 import tablesGarden from "@/components/assets/image6.jpeg";
-import tablesLuxe from "@/components/assets/walima/img6.jpg";
+import tablesLuxe from "@/components/assets/planner/centerpiece-luxe-tall.jpeg";
 import sweetheartEssentials from "@/components/assets/barat/img7.jpg";
 import sweetheartStyled from "@/components/assets/walima/img3.jpg";
+import sweetheartLuxe from "@/components/assets/planner/sweetheart-luxe.jpeg";
 import momentsBackdrop from "@/components/assets/walima/img4.jpg";
 import momentsBooth from "@/components/assets/barat/img4.jpg";
 import momentsInstallation from "@/components/assets/walima/img5.jpg";
 import signageEssentials from "@/components/assets/mehendi/img8.jpg";
 import signageSignature from "@/components/assets/walima/img6.jpg";
+import signageDetails from "@/components/assets/planner/signage-table-number.jpeg";
 
 export type FloralStyle = "fresh" | "mix" | "faux";
 
@@ -68,9 +77,9 @@ const categories: PlannerCategory[] = [
     blurb: "The reserved tables for parents and close family",
     floral: true,
     tiers: [
-      { name: "Simple", description: "Linens, a table runner and candles", image: sweetheartEssentials, low: 150, high: 250 },
-      { name: "Styled", description: "Floral runner, chargers and reserved signs", image: tablesGarden, low: 300, high: 450 },
-      { name: "Luxe", description: "Tall florals, chargers and custom linens", image: tablesLuxe, low: 550, high: 750 },
+      { name: "Simple", description: "Linens, a table runner and candles", image: familySimple, low: 150, high: 250 },
+      { name: "Styled", description: "Floral runner, chargers and reserved signs", image: familyStyled, low: 300, high: 450 },
+      { name: "Luxe", description: "Tall florals, chargers and custom linens", image: familyLuxe, low: 550, high: 750 },
     ],
   },
   {
@@ -93,7 +102,7 @@ const categories: PlannerCategory[] = [
     tiers: [
       { name: "Essentials", description: "Draped table with a floral runner", image: sweetheartEssentials, low: 250, high: 350 },
       { name: "Styled", description: "Floral runner, backdrop panel and candles", image: sweetheartStyled, low: 500, high: 700 },
-      { name: "Luxe", description: "Full floral front, backdrop and candle cluster", image: momentsInstallation, low: 900, high: 1200 },
+      { name: "Luxe", description: "Full floral front, backdrop and candle cluster", image: sweetheartLuxe, low: 900, high: 1200 },
     ],
   },
   {
@@ -104,7 +113,7 @@ const categories: PlannerCategory[] = [
     tiers: [
       { name: "Simple", description: "A pair of floral stands or a welcome arch", image: entranceSimple, low: 250, high: 400 },
       { name: "Styled", description: "Floral arch with lanterns and candles", image: entranceStyled, low: 500, high: 700 },
-      { name: "Grand", description: "A full floral entrance installation", image: entranceFull, low: 900, high: 1300 },
+      { name: "Grand", description: "A full floral entrance installation", image: entranceGrand, low: 900, high: 1300 },
     ],
   },
   {
@@ -114,8 +123,8 @@ const categories: PlannerCategory[] = [
     floral: true,
     tiers: [
       { name: "Simple", description: "Aisle runner with candle markers", image: entranceStyled, low: 200, high: 300 },
-      { name: "Styled", description: "Floral aisle stands with candles", image: entranceFull, low: 450, high: 650 },
-      { name: "Full walkway", description: "A fully lined floral aisle", image: momentsInstallation, low: 900, high: 1300 },
+      { name: "Styled", description: "Floral aisle stands with candles", image: aisleStyled, low: 450, high: 650 },
+      { name: "Full walkway", description: "A fully lined floral aisle", image: aisleFull, low: 900, high: 1300 },
     ],
   },
   {
@@ -125,7 +134,7 @@ const categories: PlannerCategory[] = [
     floral: true,
     tiers: [
       { name: "Sheer drape", description: "Draped fabric panels on stands", image: momentsBackdrop, low: 250, high: 350 },
-      { name: "Floral", description: "Draping with floral garlands or a jali panel", image: stageStatement, low: 500, high: 700 },
+      { name: "Floral", description: "Draping with floral garlands or a jali panel", image: partitionFloral, low: 500, high: 700 },
       { name: "Statement", description: "A full floral wall partition", image: momentsInstallation, low: 900, high: 1200 },
     ],
   },
@@ -136,7 +145,7 @@ const categories: PlannerCategory[] = [
     tiers: [
       { name: "Welcome sign", description: "A custom welcome sign on an easel", image: signageEssentials, low: 100, high: 150 },
       { name: "Sign & chart", description: "Welcome sign and guest seating chart", image: signageSignature, low: 220, high: 320 },
-      { name: "Every detail", description: "Adds table numbers and reserved signs", image: signageEssentials, low: 400, high: 550 },
+      { name: "Every detail", description: "Adds table numbers and reserved signs", image: signageDetails, low: 400, high: 550 },
     ],
   },
   {
@@ -146,7 +155,7 @@ const categories: PlannerCategory[] = [
     tiers: [
       { name: "Photo booth", description: "Photo booth with a styled backdrop and lighting", image: momentsBooth, low: 500, high: 750 },
       { name: "Booth & effects", description: "Photo booth plus cold sparklers and dry ice for your first dance", image: momentsBackdrop, low: 1100, high: 1500 },
-      { name: "Full entertainment", description: "DJ, photo booth, cold sparklers and dry ice", image: stageGrand, low: 2200, high: 3000 },
+      { name: "Full entertainment", description: "DJ, photo booth, cold sparklers and dry ice", image: entertainment, low: 2200, high: 3000 },
     ],
   },
 ];
