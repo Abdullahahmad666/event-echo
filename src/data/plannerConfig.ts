@@ -10,25 +10,27 @@
 import stageClassic from "@/components/assets/planner/stage-classic-draped.jpeg";
 import stageStatement from "@/components/assets/planner/stage-statement-gold-arches.jpeg";
 import stageGrand from "@/components/assets/planner/stage-grand-gold-frames.jpeg";
-import partitionFloral from "@/components/assets/walima/img14.jpg";
+import partitionSheer from "@/components/assets/planner/partition-sheer-drape.jpeg";
+import partitionFloral from "@/components/assets/planner/partition-floral-garland.jpeg";
+import partitionStatement from "@/components/assets/planner/partition-statement-floral-wall.jpeg";
 import entertainment from "@/components/assets/image4.jpeg";
-import entranceSimple from "@/components/assets/barat/img5.jpg";
-import entranceStyled from "@/components/assets/walima/img11.jpg";
-import entranceGrand from "@/components/assets/planner/entrance-grand-floral.jpeg";
-import aisleStyled from "@/components/assets/image1.jpeg";
+import entranceSimple from "@/components/assets/planner/entrance-simple-draped.jpeg";
+import entranceStyled from "@/components/assets/planner/entrance-styled-floral-arch.jpeg";
+import entranceGrand from "@/components/assets/planner/entrance-grand-candelabra.jpeg";
+import aisleSimple from "@/components/assets/walima/img11.jpg";
+import aisleStyled from "@/components/assets/planner/aisle-styled-floral-candles.jpeg";
 import aisleFull from "@/components/assets/planner/aisle-full-walkway.jpeg";
 import familySimple from "@/components/assets/planner/family-table-simple.jpeg";
 import familyStyled from "@/components/assets/planner/family-table-styled.jpeg";
 import familyLuxe from "@/components/assets/planner/family-table-luxe.jpeg";
 import tablesSimple from "@/components/assets/walima/img12.jpg";
-import tablesGarden from "@/components/assets/image6.jpeg";
+import tablesGarden from "@/components/assets/planner/centerpiece-garden-roses.jpeg";
 import tablesLuxe from "@/components/assets/planner/centerpiece-luxe-tall.jpeg";
 import sweetheartEssentials from "@/components/assets/barat/img7.jpg";
 import sweetheartStyled from "@/components/assets/walima/img3.jpg";
 import sweetheartLuxe from "@/components/assets/planner/sweetheart-luxe.jpeg";
 import momentsBackdrop from "@/components/assets/walima/img4.jpg";
 import momentsBooth from "@/components/assets/barat/img4.jpg";
-import momentsInstallation from "@/components/assets/walima/img5.jpg";
 import signageEssentials from "@/components/assets/mehendi/img8.jpg";
 import signageSignature from "@/components/assets/walima/img6.jpg";
 import signageDetails from "@/components/assets/planner/signage-table-number.jpeg";
@@ -122,7 +124,7 @@ const categories: PlannerCategory[] = [
     blurb: "The walk down to the stage",
     floral: true,
     tiers: [
-      { name: "Simple", description: "Aisle runner with candle markers", image: entranceStyled, low: 200, high: 300 },
+      { name: "Simple", description: "Aisle runner with candle markers", image: aisleSimple, low: 200, high: 300 },
       { name: "Styled", description: "Floral aisle stands with candles", image: aisleStyled, low: 450, high: 650 },
       { name: "Full walkway", description: "A fully lined floral aisle", image: aisleFull, low: 900, high: 1300 },
     ],
@@ -133,9 +135,9 @@ const categories: PlannerCategory[] = [
     blurb: "The divider between the two sides during the Nikah",
     floral: true,
     tiers: [
-      { name: "Sheer drape", description: "Draped fabric panels on stands", image: momentsBackdrop, low: 250, high: 350 },
+      { name: "Sheer drape", description: "Draped fabric panels on stands", image: partitionSheer, low: 250, high: 350 },
       { name: "Floral", description: "Draping with floral garlands or a jali panel", image: partitionFloral, low: 500, high: 700 },
-      { name: "Statement", description: "A full floral wall partition", image: momentsInstallation, low: 900, high: 1200 },
+      { name: "Statement", description: "A full floral wall partition", image: partitionStatement, low: 900, high: 1200 },
     ],
   },
   {

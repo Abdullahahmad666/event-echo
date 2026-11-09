@@ -19,8 +19,16 @@ import img6 from "@/components/assets/testimonials/img6.PNG";
 import img7 from "@/components/assets/testimonials/img7.PNG";
 import img8 from "@/components/assets/testimonials/img8.PNG";
 import img9 from "@/components/assets/testimonials/img9.PNG";
+import review10 from "@/components/assets/testimonials/review10.jpeg";
+import review11 from "@/components/assets/testimonials/review11.jpeg";
+import review12 from "@/components/assets/testimonials/review12.jpeg";
+import review13 from "@/components/assets/testimonials/review13.jpeg";
+import review14 from "@/components/assets/testimonials/review14.jpeg";
 
-const testimonialImages = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
+const testimonialImages = [
+  img1, img2, img3, img4, img5, img6, img7, img8, img9,
+  review10, review11, review12, review13, review14,
+];
 
 const videoTestimonials = [
   {

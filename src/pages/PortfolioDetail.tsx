@@ -12,6 +12,12 @@ import img6 from "@/components/assets/mehendi/img6.jpg"
 import img7 from "@/components/assets/mehendi/img7.jpg"
 import img8 from "@/components/assets/mehendi/img8.jpg"
 import img9 from "@/components/assets/mehendi/img9.jpg"
+import mehndiTables from "@/components/assets/mehendi/mehndi-tables-umbrellas.jpeg"
+import mehndiArch from "@/components/assets/mehendi/mehndi-floral-arch-lanterns.jpeg"
+import mehndiCanopy from "@/components/assets/mehendi/mehndi-stage-floral-canopy.jpeg"
+import mehndiSofa from "@/components/assets/mehendi/mehndi-sofa-umbrellas.jpeg"
+import nikahPartitionRed from "@/components/assets/nikah/partition-red-floral.jpeg"
+import nikahPartitionBlack from "@/components/assets/nikah/partition-black-starry.jpeg"
 import bimg1 from "@/components/assets/barat/img5.jpg"
 import bimg2 from "@/components/assets/barat/img3.jpg"
 import bimg3 from "@/components/assets/barat/img4.jpg"
@@ -62,6 +68,10 @@ const portfolioData: Record<string, {
       img7,
       img8,
       img9,
+      mehndiArch,
+      mehndiCanopy,
+      mehndiSofa,
+      mehndiTables,
     ],
   },
   "modern-gala-evening": {
@@ -73,6 +83,8 @@ const portfolioData: Record<string, {
     heroImage: bimg1,
     galleryImages: [
       bimg1,
+      nikahPartitionRed,
+      nikahPartitionBlack,
       bimg2,
       bimg3,
       portfolio,
