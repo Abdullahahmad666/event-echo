@@ -160,12 +160,12 @@ const categories: PlannerCategory[] = [
 
 /** Optional add-ons, each switched on or off by the visitor. Prices are placeholders. */
 const extras: PlannerExtra[] = [
-  { id: "photo-booth", name: "Photo booth", description: "A styled backdrop with lighting and props", low: 500, high: 750 },
-  { id: "dj", name: "DJ", description: "Music for the evening", low: 800, high: 1200 },
-  { id: "sparklers", name: "Cold sparklers", description: "Indoor-safe sparklers for your entrance or first dance", low: 300, high: 500 },
-  { id: "dry-ice", name: "Dry ice", description: "A low cloud effect for your first dance", low: 300, high: 500 },
-  { id: "photography", name: "Photography", description: "A photographer for your event", low: 1200, high: 2000 },
-  { id: "videography", name: "Videography", description: "A videographer and an edited highlight film", low: 1500, high: 2500 },
+  { id: "photo-booth", name: "Photo booth", description: "A styled backdrop with lighting and props", low: 300, high: 450 },
+  { id: "dj", name: "DJ", description: "Music for the evening", low: 500, high: 800 },
+  { id: "sparklers", name: "Cold sparklers", description: "Indoor-safe sparklers for your entrance or first dance", low: 150, high: 250 },
+  { id: "dry-ice", name: "Dry ice", description: "A low cloud effect for your first dance", low: 150, high: 250 },
+  { id: "photography", name: "Photography", description: "A photographer for your event", low: 700, high: 1200 },
+  { id: "videography", name: "Videography", description: "A videographer and an edited highlight film", low: 900, high: 1500 },
 ];
 
 export const plannerConfig = {
