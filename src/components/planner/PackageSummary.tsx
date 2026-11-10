@@ -1,6 +1,7 @@
 import { forwardRef } from "react";
-import { Minus, Plus } from "lucide-react";
+import { Minus, Plus, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import type { PlannerExtra } from "@/data/plannerConfig";
 import { formatMoney, type BudgetStatus, type PricedItem, type PricedPackage } from "@/lib/planner";
 import { AnimatedRange } from "./AnimatedMoney";
 
@@ -10,6 +11,7 @@ interface PackageSummaryProps {
   budget: number;
   customized: boolean;
   onSetTier: (categoryId: string, tierIndex: number | null) => void;
+  onRemoveExtra: (id: string) => void;
   onReset: () => void;
   onBook: () => void;
 }
@@ -21,11 +23,11 @@ const statusText: Record<BudgetStatus, (budget: string) => string> = {
 };
 
 export const PackageSummary = forwardRef<HTMLElement, PackageSummaryProps>(function PackageSummary(
-  { pkg, status, budget, customized, onSetTier, onReset, onBook },
+  { pkg, status, budget, customized, onSetTier, onRemoveExtra, onReset, onBook },
   ref,
 ) {
   const included = pkg.items.filter((i) => i.tierIndex !== null);
-  const hasPackage = included.length > 0;
+  const hasPackage = included.length > 0 || pkg.extras.length > 0;
   const fill = status === "within" && budget > 0 ? Math.max(0.06, pkg.high / budget) : 1;
 
   return (
@@ -62,16 +64,19 @@ export const PackageSummary = forwardRef<HTMLElement, PackageSummaryProps>(funct
 
       {!hasPackage && (
         <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-          {pkg.items.length === 0
+          {pkg.items.length === 0 && pkg.extras.length === 0
             ? "Switch something on under “What matters most?” and we'll build a package around it."
             : "This budget is below our smallest setup for your guest count. Tap + on anything below to see what it would take, or book a call and we'll get creative together."}
         </p>
       )}
 
-      {pkg.items.length > 0 && (
+      {(pkg.items.length > 0 || pkg.extras.length > 0) && (
         <ul className="mt-6 divide-y divide-border border-t border-border">
           {pkg.items.map((item) => (
             <PackageLine key={item.category.id} item={item} onSetTier={onSetTier} />
+          ))}
+          {pkg.extras.map((extra) => (
+            <ExtraLine key={extra.id} extra={extra} onRemove={() => onRemoveExtra(extra.id)} />
           ))}
         </ul>
       )}
@@ -159,6 +164,21 @@ function PackageLine({
           </StepButton>
         </div>
       </div>
+    </li>
+  );
+}
+
+function ExtraLine({ extra, onRemove }: { extra: PlannerExtra; onRemove: () => void }) {
+  return (
+    <li className="flex items-start gap-4 py-5">
+      <div className="min-w-0 flex-1">
+        <p className="font-sans text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground">Extra</p>
+        <p className="mt-0.5 font-serif text-xl leading-tight text-foreground">{extra.name}</p>
+        <p className="mt-0.5 text-xs leading-snug text-muted-foreground">{extra.description}</p>
+      </div>
+      <StepButton onClick={onRemove} disabled={false} label={`Remove ${extra.name}`}>
+        <X className="h-3.5 w-3.5" />
+      </StepButton>
     </li>
   );
 }

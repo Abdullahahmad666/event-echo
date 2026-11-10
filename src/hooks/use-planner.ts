@@ -3,6 +3,7 @@ import { plannerConfig, type FloralStyle } from "@/data/plannerConfig";
 import {
   budgetStatus,
   defaultPriorities,
+  isExtraId,
   priceSelection,
   suggestPackage,
   type Priority,
@@ -15,12 +16,14 @@ export interface PlannerState {
   guests: number;
   floral: FloralStyle;
   priorities: Priority[];
+  /** Ids of the add-ons switched on. */
+  extras: string[];
   selection: Selection;
   /** True once the visitor has changed a tier by hand. */
   customized: boolean;
 }
 
-type Inputs = Pick<PlannerState, "eventType" | "budget" | "guests" | "floral" | "priorities">;
+type Inputs = Pick<PlannerState, "eventType" | "budget" | "guests" | "floral" | "priorities" | "extras">;
 
 const STORAGE_KEY = "ctd-budget-planner-v1";
 
@@ -31,6 +34,7 @@ function initialState(): PlannerState {
     guests: plannerConfig.guests.default,
     floral: "mix",
     priorities: defaultPriorities(),
+    extras: [],
   };
   return { ...inputs, selection: suggestPackage(inputs), customized: false };
 }
@@ -57,6 +61,7 @@ function loadState(): PlannerState | null {
       guests: clamp(saved.guests, plannerConfig.guests.min, plannerConfig.guests.max, plannerConfig.guests.default),
       floral: saved.floral && saved.floral in plannerConfig.floralMultiplier ? saved.floral : "mix",
       priorities: priorities.map((p) => ({ id: p.id, enabled: p.enabled !== false })),
+      extras: Array.isArray(saved.extras) ? [...new Set(saved.extras.filter(isExtraId))] : [],
     };
 
     let selection = suggestPackage(inputs);
@@ -102,6 +107,15 @@ export function usePlanner() {
     setState((s) => ({ ...s, selection: { ...s.selection, [categoryId]: tierIndex }, customized: true }));
   }, []);
 
+  /** Add-ons change the money left for decor, so re-suggest unless the visitor has customised tiers. */
+  const toggleExtra = useCallback((id: string, on: boolean) => {
+    setState((s) => {
+      const extras = on ? [...new Set([...s.extras, id])] : s.extras.filter((e) => e !== id);
+      const next = { ...s, extras };
+      return s.customized ? next : { ...next, selection: suggestPackage(next) };
+    });
+  }, []);
+
   const resetToSuggestion = useCallback(() => {
     setState((s) => ({ ...s, selection: suggestPackage(s), customized: false }));
   }, []);
@@ -116,10 +130,10 @@ export function usePlanner() {
   }, []);
 
   const pkg = useMemo(
-    () => priceSelection(state.selection, state.priorities, state.guests, state.floral),
-    [state.selection, state.priorities, state.guests, state.floral],
+    () => priceSelection(state.selection, state.priorities, state.guests, state.floral, state.extras),
+    [state.selection, state.priorities, state.guests, state.floral, state.extras],
   );
   const status = budgetStatus(pkg.low, pkg.high, state.budget);
 
-  return { state, pkg, status, setInputs, setEventType, setTier, resetToSuggestion, clear };
+  return { state, pkg, status, setInputs, setEventType, setTier, toggleExtra, resetToSuggestion, clear };
 }

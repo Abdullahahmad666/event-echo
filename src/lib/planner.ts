@@ -1,4 +1,4 @@
-import { plannerConfig, type FloralStyle, type PlannerCategory } from "@/data/plannerConfig";
+import { plannerConfig, type FloralStyle, type PlannerCategory, type PlannerExtra } from "@/data/plannerConfig";
 
 /** Tier index per category id; `null` = enabled but not included in the package. */
 export type Selection = Record<string, number | null>;
@@ -14,6 +14,8 @@ export interface PlannerInput {
   floral: FloralStyle;
   /** Ordered: first = most important. */
   priorities: Priority[];
+  /** Ids of the add-ons the visitor switched on. */
+  extras: string[];
 }
 
 export type BudgetStatus = "within" | "slightly-over" | "over";
@@ -27,6 +29,8 @@ export interface PricedItem {
 
 export interface PricedPackage {
   items: PricedItem[];
+  /** Add-ons the visitor switched on, in config order. */
+  extras: PlannerExtra[];
   low: number;
   high: number;
 }
@@ -35,6 +39,10 @@ const categoryById = new Map(plannerConfig.categories.map((c) => [c.id, c]));
 
 export function getCategory(id: string): PlannerCategory | undefined {
   return categoryById.get(id);
+}
+
+export function isExtraId(id: unknown): id is string {
+  return typeof id === "string" && plannerConfig.extras.some((e) => e.id === id);
 }
 
 export function defaultPriorities(): Priority[] {
@@ -67,10 +75,12 @@ export function priceSelection(
   priorities: Priority[],
   guests: number,
   floral: FloralStyle,
+  extraIds: string[],
 ): PricedPackage {
   const items: PricedItem[] = [];
-  let low = 0;
-  let high = 0;
+  const extras = plannerConfig.extras.filter((e) => extraIds.includes(e.id));
+  let low = extras.reduce((sum, e) => sum + e.low, 0);
+  let high = extras.reduce((sum, e) => sum + e.high, 0);
 
   for (const p of priorities) {
     if (!p.enabled) continue;
@@ -87,7 +97,7 @@ export function priceSelection(
     items.push({ category, tierIndex, ...price });
   }
 
-  return { items, low: roundDown(low), high: roundUp(high) };
+  return { items, extras, low: roundDown(low), high: roundUp(high) };
 }
 
 /**
@@ -96,12 +106,13 @@ export function priceSelection(
  *     if the package's high end still fits the budget.
  *  2. Walk again top-down and upgrade each included category as far as it fits,
  *     so the top priority gets upgraded first.
+ * Add-ons the visitor switched on are always counted, so decor fills what's left.
  */
 export function suggestPackage(input: PlannerInput): Selection {
-  const { budget, guests, floral, priorities } = input;
+  const { budget, guests, floral, priorities, extras } = input;
   const selection: Selection = {};
   const enabled = priorities.filter((p) => p.enabled && getCategory(p.id));
-  const fits = () => priceSelection(selection, priorities, guests, floral).high <= budget;
+  const fits = () => priceSelection(selection, priorities, guests, floral, extras).high <= budget;
 
   for (const p of enabled) {
     selection[p.id] = 0;

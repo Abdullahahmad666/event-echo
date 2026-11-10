@@ -10,27 +10,24 @@
 import stageClassic from "@/components/assets/planner/stage-classic-draped.jpeg";
 import stageStatement from "@/components/assets/planner/stage-statement-gold-arches.jpeg";
 import stageGrand from "@/components/assets/planner/stage-grand-gold-frames.jpeg";
-import partitionSheer from "@/components/assets/planner/partition-sheer-drape.jpeg";
-import partitionFloral from "@/components/assets/planner/partition-floral-garland.jpeg";
+import partitionFloralFrame from "@/components/assets/nikah/partition-black-starry.jpeg";
+import partitionRose from "@/components/assets/nikah/partition-red-floral.jpeg";
 import partitionStatement from "@/components/assets/planner/partition-statement-floral-wall.jpeg";
-import entertainment from "@/components/assets/image4.jpeg";
 import entranceSimple from "@/components/assets/planner/entrance-simple-draped.jpeg";
 import entranceStyled from "@/components/assets/planner/entrance-styled-floral-arch.jpeg";
 import entranceGrand from "@/components/assets/planner/entrance-grand-candelabra.jpeg";
-import aisleSimple from "@/components/assets/walima/img11.jpg";
+import aisleSimple from "@/components/assets/image1.jpeg";
 import aisleStyled from "@/components/assets/planner/aisle-styled-floral-candles.jpeg";
-import aisleFull from "@/components/assets/planner/aisle-full-walkway.jpeg";
+import aisleFull from "@/components/assets/planner/aisle-full-blossom-trees.jpeg";
 import familySimple from "@/components/assets/planner/family-table-simple.jpeg";
 import familyStyled from "@/components/assets/planner/family-table-styled.jpeg";
 import familyLuxe from "@/components/assets/planner/family-table-luxe.jpeg";
 import tablesSimple from "@/components/assets/walima/img12.jpg";
 import tablesGarden from "@/components/assets/planner/centerpiece-garden-roses.jpeg";
 import tablesLuxe from "@/components/assets/planner/centerpiece-luxe-tall.jpeg";
-import sweetheartEssentials from "@/components/assets/barat/img7.jpg";
-import sweetheartStyled from "@/components/assets/walima/img3.jpg";
+import sweetheartEssentials from "@/components/assets/walima/img9.jpg";
+import sweetheartStyled from "@/components/assets/image3.jpeg";
 import sweetheartLuxe from "@/components/assets/planner/sweetheart-luxe.jpeg";
-import momentsBackdrop from "@/components/assets/walima/img4.jpg";
-import momentsBooth from "@/components/assets/barat/img4.jpg";
 import signageEssentials from "@/components/assets/mehendi/img8.jpg";
 import signageSignature from "@/components/assets/walima/img6.jpg";
 import signageDetails from "@/components/assets/planner/signage-table-number.jpeg";
@@ -58,6 +55,15 @@ export interface PlannerCategory {
   perTable?: boolean;
   /** Price changes with the Fresh / Mix / Faux choice. */
   floral?: boolean;
+}
+
+/** An optional service the visitor can switch on. Shown without a photo. */
+export interface PlannerExtra {
+  id: string;
+  name: string;
+  description: string;
+  low: number;
+  high: number;
 }
 
 /** Default priority order (top = upgraded first). */
@@ -103,7 +109,7 @@ const categories: PlannerCategory[] = [
     floral: true,
     tiers: [
       { name: "Essentials", description: "Draped table with a floral runner", image: sweetheartEssentials, low: 250, high: 350 },
-      { name: "Styled", description: "Floral runner, backdrop panel and candles", image: sweetheartStyled, low: 500, high: 700 },
+      { name: "Styled", description: "Full floral table front, backdrop arch and candles", image: sweetheartStyled, low: 500, high: 700 },
       { name: "Luxe", description: "Full floral front, backdrop and candle cluster", image: sweetheartLuxe, low: 900, high: 1200 },
     ],
   },
@@ -126,7 +132,7 @@ const categories: PlannerCategory[] = [
     tiers: [
       { name: "Simple", description: "Aisle runner with candle markers", image: aisleSimple, low: 200, high: 300 },
       { name: "Styled", description: "Floral aisle stands with candles", image: aisleStyled, low: 450, high: 650 },
-      { name: "Full walkway", description: "A fully lined floral aisle", image: aisleFull, low: 900, high: 1300 },
+      { name: "Full walkway", description: "Blossom trees and florals lining the whole aisle", image: aisleFull, low: 900, high: 1300 },
     ],
   },
   {
@@ -135,8 +141,8 @@ const categories: PlannerCategory[] = [
     blurb: "The divider between the two sides during the Nikah",
     floral: true,
     tiers: [
-      { name: "Sheer drape", description: "Draped fabric panels on stands", image: partitionSheer, low: 250, high: 350 },
-      { name: "Floral", description: "Draping with floral garlands or a jali panel", image: partitionFloral, low: 500, high: 700 },
+      { name: "Floral frame", description: "A garland panel with a floral frame", image: partitionFloralFrame, low: 250, high: 350 },
+      { name: "Rose", description: "A rose-framed panel with hanging garlands, in your colours", image: partitionRose, low: 500, high: 700 },
       { name: "Statement", description: "A full floral wall partition", image: partitionStatement, low: 900, high: 1200 },
     ],
   },
@@ -150,16 +156,16 @@ const categories: PlannerCategory[] = [
       { name: "Every detail", description: "Adds table numbers and reserved signs", image: signageDetails, low: 400, high: 550 },
     ],
   },
-  {
-    id: "extras",
-    label: "Extras",
-    blurb: "DJ, sparklers, dry ice and photo booth",
-    tiers: [
-      { name: "Photo booth", description: "Photo booth with a styled backdrop and lighting", image: momentsBooth, low: 500, high: 750 },
-      { name: "Booth & effects", description: "Photo booth plus cold sparklers and dry ice for your first dance", image: momentsBackdrop, low: 1100, high: 1500 },
-      { name: "Full entertainment", description: "DJ, photo booth, cold sparklers and dry ice", image: entertainment, low: 2200, high: 3000 },
-    ],
-  },
+];
+
+/** Optional add-ons, each switched on or off by the visitor. Prices are placeholders. */
+const extras: PlannerExtra[] = [
+  { id: "photo-booth", name: "Photo booth", description: "A styled backdrop with lighting and props", low: 500, high: 750 },
+  { id: "dj", name: "DJ", description: "Music for the evening", low: 800, high: 1200 },
+  { id: "sparklers", name: "Cold sparklers", description: "Indoor-safe sparklers for your entrance or first dance", low: 300, high: 500 },
+  { id: "dry-ice", name: "Dry ice", description: "A low cloud effect for your first dance", low: 300, high: 500 },
+  { id: "photography", name: "Photography", description: "A photographer for your event", low: 1200, high: 2000 },
+  { id: "videography", name: "Videography", description: "A videographer and an edited highlight film", low: 1500, high: 2500 },
 ];
 
 export const plannerConfig = {
@@ -190,4 +196,5 @@ export const plannerConfig = {
   },
 
   categories,
+  extras,
 };

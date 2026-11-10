@@ -11,6 +11,7 @@ import { PlannerCard } from "@/components/planner/PlannerCard";
 import { RangeSlider } from "@/components/planner/RangeSlider";
 import { ChoiceGroup } from "@/components/planner/ChoiceGroup";
 import { PriorityList } from "@/components/planner/PriorityList";
+import { ExtrasList } from "@/components/planner/ExtrasList";
 import { PackageSummary } from "@/components/planner/PackageSummary";
 import { StickyPackageBar } from "@/components/planner/StickyPackageBar";
 import { ContactStep, type ContactDetails } from "@/components/planner/ContactStep";
@@ -23,7 +24,7 @@ const eventTypeOptions = plannerConfig.eventTypes.map((t) => ({ value: t, label:
 
 const Inquire = () => {
   const { toast } = useToast();
-  const { state, pkg, status, setInputs, setEventType, setTier, resetToSuggestion, clear } = usePlanner();
+  const { state, pkg, status, setInputs, setEventType, setTier, toggleExtra, resetToSuggestion, clear } = usePlanner();
   const [stage, setStage] = useState<Stage>("plan");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submittedName, setSubmittedName] = useState("");
@@ -31,7 +32,7 @@ const Inquire = () => {
   const summaryRef = useRef<HTMLElement>(null);
   const plannerTopRef = useRef<HTMLDivElement>(null);
 
-  const hasPackage = pkg.items.some((i) => i.tierIndex !== null);
+  const hasPackage = pkg.items.some((i) => i.tierIndex !== null) || pkg.extras.length > 0;
   const budgetLabel = formatMoney(state.budget) + (state.budget >= budgetRange.max ? "+" : "");
   const guestLabel = `${state.guests}${state.guests >= guestRange.max ? "+" : ""} guests`;
 
@@ -69,13 +70,16 @@ const Inquire = () => {
             high: pkg.high,
             status,
             customized: state.customized,
-            items: included.map((i) => ({
-              category: i.category.label,
-              tier: i.category.tiers[i.tierIndex!].name,
-              description: i.category.tiers[i.tierIndex!].description,
-              level: i.tierIndex! + 1,
-              levels: i.category.tiers.length,
-            })),
+            items: [
+              ...included.map((i) => ({
+                category: i.category.label,
+                tier: i.category.tiers[i.tierIndex!].name,
+                description: i.category.tiers[i.tierIndex!].description,
+                level: i.tierIndex! + 1,
+                levels: i.category.tiers.length,
+              })),
+              ...pkg.extras.map((e) => ({ category: "Extras", tier: e.name, description: e.description })),
+            ],
             notIncluded: pkg.items.filter((i) => i.tierIndex === null).map((i) => i.category.label),
             switchedOff: state.priorities
               .filter((p) => !p.enabled)
@@ -205,6 +209,14 @@ const Inquire = () => {
                   >
                     <PriorityList priorities={state.priorities} onChange={(priorities) => setInputs({ priorities })} />
                   </PlannerCard>
+
+                  <PlannerCard
+                    step="04"
+                    title="Extras"
+                    description="Switch on anything else you'd like and we'll add it to your package."
+                  >
+                    <ExtrasList extras={plannerConfig.extras} selected={state.extras} onToggle={toggleExtra} />
+                  </PlannerCard>
                 </div>
 
                 <div className="lg:sticky lg:top-28 lg:self-start">
@@ -215,6 +227,7 @@ const Inquire = () => {
                     budget={state.budget}
                     customized={state.customized}
                     onSetTier={setTier}
+                    onRemoveExtra={(id) => toggleExtra(id, false)}
                     onReset={resetToSuggestion}
                     onBook={() => goTo("contact")}
                   />

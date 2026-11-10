@@ -37,6 +37,10 @@ const fields: {
 export function ContactStep({ pkg, budget, isSubmitting, onBack, onSubmit }: ContactStepProps) {
   const [details, setDetails] = useState<ContactDetails>({ name: "", email: "", phone: "", venue: "", eventDate: "" });
   const included = pkg.items.filter((i) => i.tierIndex !== null);
+  const lines = [
+    ...included.map((i) => `${i.category.label}: ${i.category.tiers[i.tierIndex!].name}`),
+    ...pkg.extras.map((e) => e.name),
+  ];
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -59,12 +63,10 @@ export function ContactStep({ pkg, budget, isSubmitting, onBack, onSubmit }: Con
       <div className="mt-8 border border-border bg-card/70 p-5">
         <p className="font-sans text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground">Your package</p>
         <p className="mt-1 font-serif text-2xl text-clay">
-          {included.length > 0 ? `${formatMoney(pkg.low)} – ${formatMoney(pkg.high)}` : "To be designed together"}
+          {lines.length > 0 ? `${formatMoney(pkg.low)} – ${formatMoney(pkg.high)}` : "To be designed together"}
         </p>
-        {included.length > 0 && (
-          <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-            {included.map((i) => `${i.category.label}: ${i.category.tiers[i.tierIndex!].name}`).join(" · ")}
-          </p>
+        {lines.length > 0 && (
+          <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{lines.join(" · ")}</p>
         )}
         <p className="mt-1 text-xs text-muted-foreground">Budget: {formatMoney(budget)}</p>
       </div>
